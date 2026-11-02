@@ -1,4 +1,4 @@
-CUDA_HOME?=$(CODNA_PREFIX)
+CUDA_HOME?=/usr/local/cuda
 $(info $(CUDA_HOME))
 BUILDDIR:=./build
 NCCL_HOME:=./nccl
@@ -6,8 +6,8 @@ NCCL_BUILD_DIR?=$(NCCL_HOME)/build
 NCCL_INC:=$(NCCL_HOME)/src/include
 NCCL_HEADER:=$(NCCL_BUILD_DIR)/include
 FL_SO:=libnccl-net-fuselink.so
-NVCC:=$(CUDA_HOME)/bin/nvcc
-CXX:=/usr/bin/g++
+NVCC:=$(CUDA_HOME)/bin/nvcc -ccbin $(CXX)
+CXX?=/usr/bin/g++
 INC:=$(CUDA_CFLAGS) -I$(NCCL_INC) -I$(NCCL_HEADER) -I$(CONDA_PREFIX)/include -Isrc/
 LIB_PATH:=-L/usr/lib/x86_64-linux-gnu -L$(NCCL_BUILD_DIR)/lib $(CUDA_LDFLAGS) -L$(CONDA_PREFIX)/lib
 

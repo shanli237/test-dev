@@ -1,0 +1,34 @@
+warning: Error disabling address space randomization: Operation not permitted
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+# nccl-tests version 2.21.1 (afd59ab) nccl-headers=21904 nccl-library=21904
+# Collective test starting: all_reduce_perf
+# nThread 1 nGpus 2 minBytes 8 maxBytes 8 step: 1048576(bytes) warmup iters: 1 iters: 1 agg iters: 1 validation: 1 graph: 0 unalign: 0
+#
+# Using devices
+[New Thread 0x7f87779ff000 (LWP 3061)]
+#  Rank  0 Group  0 Pid   3058 on e01-cn-yb84rbk1807 device  0 [0000:bb:00] NVIDIA L20D
+#  Rank  1 Group  0 Pid   3058 on e01-cn-yb84rbk1807 device  1 [0000:db:00] NVIDIA L20D
+e01-cn-yb84rbk1807:3058:3058 [0] NCCL INFO Bootstrap : Using eth0:11.163.39.110<0>
+e01-cn-yb84rbk1807:3058:3058 [0] NCCL INFO Plugin name set by env to libnccl-net-fuselink.so
+
+Thread 1 "all_reduce_perf" received signal SIGSEGV, Segmentation fault.
+0x00007f877d70ca51 in fwrite () from /lib/x86_64-linux-gnu/libc.so.6
+
+Thread 2 (Thread 0x7f87779ff000 (LWP 3061) "cuda00001400006"):
+#0  0x00007f877d7a179d in poll () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f8777d1ced7 in ?? () from /lib/x86_64-linux-gnu/libcuda.so.1
+#2  0x00007f8777e0c357 in ?? () from /lib/x86_64-linux-gnu/libcuda.so.1
+#3  0x00007f8777d08c23 in ?? () from /lib/x86_64-linux-gnu/libcuda.so.1
+#4  0x00007f877d722b84 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007f877d7afcc4 in clone () from /lib/x86_64-linux-gnu/libc.so.6
+
+Thread 1 (Thread 0x7f877f933000 (LWP 3058) "all_reduce_perf"):
+#0  0x00007f877d70ca51 in fwrite () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f87749acd2f in ncclDebugLog(ncclDebugLogLevel, unsigned long, char const*, int, char const*, ...) () from /workspace/FuseLink/FuseLink/build/lib/libnccl-net-fuselink.so
+#2  0x00007f87749ac439 in ncclLoadParam(char const*, long, long, long*) () from /workspace/FuseLink/FuseLink/build/lib/libnccl-net-fuselink.so
+#3  0x00007f877499a9b4 in ncclParamFuseLinkNChannels() () from /workspace/FuseLink/FuseLink/build/lib/libnccl-net-fuselink.so
+#4  0x00007f877499739a in _GLOBAL__sub_I_plugin.cc () from /workspace/FuseLink/FuseLink/build/lib/libnccl-net-fuselink.so
+#5  0x00007f877f98771f in ?? () from /lib64/ld-linux-x86-64.so.2
+#6  0x00007f877f987824 in ?? () from /lib64/ld-linux-x86-64.so.2
+#7  0x00007f877f9835b2 in _dl_catch_exception () from /lib64/ld-linux-x86-64.so.2

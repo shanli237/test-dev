@@ -1,0 +1,269 @@
+# nccl-tests version 2.21.1 (afd59ab) nccl-headers=21904 nccl-library=21904
+# Collective test starting: all_reduce_perf
+# nThread 1 nGpus 2 minBytes 8 maxBytes 8 step: 1048576(bytes) warmup iters: 1 iters: 1 agg iters: 1 validation: 1 graph: 0 unalign: 0
+#
+# Using devices
+#  Rank  0 Group  0 Pid  23984 on e01-cn-yb84rbk1807 device  0 [0000:bb:00] NVIDIA L20D
+#  Rank  1 Group  0 Pid  23984 on e01-cn-yb84rbk1807 device  1 [0000:db:00] NVIDIA L20D
+e01-cn-yb84rbk1807:23984:23984 [0] NCCL INFO Bootstrap : Using eth0:11.163.39.110<0>
+e01-cn-yb84rbk1807:23984:23984 [0] NCCL INFO Plugin name set by env to libnccl-net-none.so
+e01-cn-yb84rbk1807:23984:23984 [0] NCCL INFO NET/Plugin : dlerror=libnccl-net-none.so: cannot open shared object file: No such file or directory No plugin found (libnccl-net-none.so), using internal implementation
+e01-cn-yb84rbk1807:23984:23984 [0] NCCL INFO cudaDriverVersion 13000
+NCCL version 2.19.4+cuda12.2
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:43 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23998 [0] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+
+e01-cn-yb84rbk1807:23984:23999 [1] enqueue.cc:54 NCCL WARN Cuda failure 'named symbol not found'
+e01-cn-yb84rbk1807:23984:23998 [0] NCCL INFO init.cc:1364 -> 1
+e01-cn-yb84rbk1807:23984:23999 [1] NCCL INFO init.cc:1364 -> 1
+e01-cn-yb84rbk1807:23984:23999 [1] NCCL INFO group.cc:64 -> 1 [Async thread]
+e01-cn-yb84rbk1807:23984:23998 [0] NCCL INFO group.cc:64 -> 1 [Async thread]
+e01-cn-yb84rbk1807:23984:23984 [1] NCCL INFO group.cc:418 -> 1
+e01-cn-yb84rbk1807:23984:23984 [1] NCCL INFO group.cc:95 -> 1
+e01-cn-yb84rbk1807: Test NCCL failure common.cu:236 'unhandled cuda error (run with NCCL_DEBUG=INFO for details) / '
+ .. e01-cn-yb84rbk1807 pid 23984: Test failure common.cu:1712
+ .. e01-cn-yb84rbk1807 pid 23984: Test failure common.cu:1545

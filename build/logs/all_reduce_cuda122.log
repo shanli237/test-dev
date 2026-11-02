@@ -1,0 +1,13 @@
+# nccl-tests version 2.21.1 (afd59ab) nccl-headers=21904 nccl-library=21904
+# Collective test starting: all_reduce_perf
+# nThread 1 nGpus 2 minBytes 8 maxBytes 1048576 step: 2(factor) warmup iters: 1 iters: 3 agg iters: 1 validation: 1 graph: 0 unalign: 0
+#
+# Using devices
+#  Rank  0 Group  0 Pid  34138 on e01-cn-yb84rbk1807 device  0 [0000:bb:00] NVIDIA L20D
+#  Rank  1 Group  0 Pid  34138 on e01-cn-yb84rbk1807 device  1 [0000:db:00] NVIDIA L20D
+e01-cn-yb84rbk1807:34138:34138 [0] NCCL INFO Bootstrap : Using eth0:11.163.39.110<0>
+e01-cn-yb84rbk1807:34138:34138 [0] NCCL INFO Plugin name set by env to libnccl-net-fuselink.so
+e01-cn-yb84rbk1807:34138:34138 [0] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v7 symbol.
+e01-cn-yb84rbk1807:34138:34138 [0] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin symbol (>= v5). ncclCollNetPlugin symbols v4 and lower are not supported.
+e01-cn-yb84rbk1807:34138:34138 [0] NCCL INFO cudaDriverVersion 13000
+NCCL version 2.19.4+cuda12.2

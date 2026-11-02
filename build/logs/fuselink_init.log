@@ -1,0 +1,5 @@
+NCCL 21904: starting ncclCommInitAll on GPUs 0,1
+e01-cn-yb84rbk1807:2820:2820 [0] NCCL INFO cudaDriverVersion 13000
+e01-cn-yb84rbk1807:2820:2820 [0] NCCL INFO Bootstrap : Using eth0:11.163.39.110<0>
+e01-cn-yb84rbk1807:2820:2820 [0] NCCL INFO Plugin name set by env to libnccl-net-fuselink.so
+timeout: the monitored command dumped core

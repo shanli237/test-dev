@@ -774,7 +774,11 @@ static int ncclIbAllocateChannel() {
 
 NCCL_PARAM(FuseLinkNChannels, "FUSELINK_NCHANNELS", 4);
 
-static int nChannels = ncclParamFuseLinkNChannels();
+// Read parameters after shared-library static initialization has completed.
+static int fuseLinkNChannels() {
+  static const int channels = ncclParamFuseLinkNChannels();
+  return channels;
+}
 
 ncclResult_t ncclIbListen(int dev, void* opaqueHandle, void** listenComm) {
   struct ncclIbListenComm* comm;
@@ -787,7 +791,7 @@ ncclResult_t ncclIbListen(int dev, void* opaqueHandle, void** listenComm) {
   comm->channelId = handle->channelId;
   
   // use the specified dev if provided, otherwise use the dev given by NCCL
-  comm->dev = Channel2NIC[handle->channelId % nChannels] == -1 ? dev : Channel2NIC[handle->channelId % nChannels];
+  comm->dev = Channel2NIC[handle->channelId % fuseLinkNChannels()] == -1 ? dev : Channel2NIC[handle->channelId % fuseLinkNChannels()];
   INFO(NCCL_INIT|NCCL_NET, "channel id %d listen comm %p dev %d", comm->channelId, comm, comm->dev);
   NCCLCHECK(ncclSocketInit(&comm->sock, &ncclIbIfAddr, handle->magic, ncclSocketTypeNetIb, NULL, 1));
   NCCLCHECK(ncclSocketListen(&comm->sock));
@@ -800,7 +804,7 @@ ncclResult_t ncclIbConnect(int dev, void* opaqueHandle, void** sendComm, ncclNet
   struct ncclIbHandle* handle = (struct ncclIbHandle*) opaqueHandle;
   struct ncclIbCommStage* stage = &handle->stage;
   int channelId = handle->channelId;
-  dev = Channel2NIC[channelId % nChannels] == -1 ? dev : Channel2NIC[channelId % nChannels]; // update connect NIC
+  dev = Channel2NIC[channelId % fuseLinkNChannels()] == -1 ? dev : Channel2NIC[channelId % fuseLinkNChannels()]; // update connect NIC
   // INFO(NCCL_INIT|NCCL_NET, "NET/FuseLink : thread %p Using channel %d for connection", pthread_self(), handle->channelId);
 
   struct ncclIbSendComm* comm = (struct ncclIbSendComm*)stage->comm;
