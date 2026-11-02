@@ -68,3 +68,8 @@ src
 ## Note for OSDI Artifact
 
 We are actively addressing the additional experiments requested by the Shepherd. Some of the codebase remain under active development and are currently optimized for the specialized configurations of our testing environments.
+
+## Local and two-node validation
+
+See [双机配置与运行说明](docs/multinode.md) for the CUDA 12.2 environment,
+NCCL compatibility patch, MPI build, and two-node launch procedure.

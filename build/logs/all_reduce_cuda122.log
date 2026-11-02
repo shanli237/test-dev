@@ -3,11 +3,163 @@
 # nThread 1 nGpus 2 minBytes 8 maxBytes 1048576 step: 2(factor) warmup iters: 1 iters: 3 agg iters: 1 validation: 1 graph: 0 unalign: 0
 #
 # Using devices
-#  Rank  0 Group  0 Pid  34138 on e01-cn-yb84rbk1807 device  0 [0000:bb:00] NVIDIA L20D
-#  Rank  1 Group  0 Pid  34138 on e01-cn-yb84rbk1807 device  1 [0000:db:00] NVIDIA L20D
-e01-cn-yb84rbk1807:34138:34138 [0] NCCL INFO Bootstrap : Using eth0:11.163.39.110<0>
-e01-cn-yb84rbk1807:34138:34138 [0] NCCL INFO Plugin name set by env to libnccl-net-fuselink.so
-e01-cn-yb84rbk1807:34138:34138 [0] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v7 symbol.
-e01-cn-yb84rbk1807:34138:34138 [0] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin symbol (>= v5). ncclCollNetPlugin symbols v4 and lower are not supported.
-e01-cn-yb84rbk1807:34138:34138 [0] NCCL INFO cudaDriverVersion 13000
+#  Rank  0 Group  0 Pid   2784 on e01-cn-il24rbk1805 device  0 [0000:bb:00] NVIDIA L20D
+#  Rank  1 Group  0 Pid   2784 on e01-cn-il24rbk1805 device  1 [0000:db:00] NVIDIA L20D
+e01-cn-il24rbk1805:2784:2784 [0] NCCL INFO Bootstrap : Using eth0:11.163.39.111<0>
+e01-cn-il24rbk1805:2784:2784 [0] NCCL INFO Plugin name set by env to libnccl-net-fuselink.so
+e01-cn-il24rbk1805:2784:2784 [0] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v7 symbol.
+e01-cn-il24rbk1805:2784:2784 [0] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin symbol (>= v5). ncclCollNetPlugin symbols v4 and lower are not supported.
+e01-cn-il24rbk1805:2784:2784 [0] NCCL INFO cudaDriverVersion 13000
 NCCL version 2.19.4+cuda12.2
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO NCCL_IB_HCA set to =mlx5_bond_5,mlx5_bond_6
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO NET/FuseLink : Using [0]mlx5_bond_5:1/RoCE [1]mlx5_bond_6:1/RoCE ; OOB eth0:11.163.39.111<0>
+
+e01-cn-il24rbk1805:2784:2795 [0] src/plugin.cc:316 NCCL WARN 
+
+=======================
+NET/FuseLink: init done
+
+FuseLink is in very early stage of development, use in caution.
+=======================
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO NET/FuseLink : channel 0 nic 0
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO NET/FuseLink : channel 1 nic 0
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO NET/FuseLink : channel 2 nic 0
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO NET/FuseLink : channel 3 nic 0
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO NET/FuseLink : channel 4 nic 0
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO NET/FuseLink : channel 5 nic 0
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO NET/FuseLink : channel 6 nic 0
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO NET/FuseLink : channel 7 nic 0
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO NET/FuseLink : channel 8 nic 0
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO NET/FuseLink : channel 9 nic 0
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO NET/FuseLink : channel 10 nic 0
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO NET/FuseLink : channel 11 nic 0
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO NET/FuseLink : channel 12 nic 0
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO NET/FuseLink : channel 13 nic 0
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO NET/FuseLink : channel 14 nic 0
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO NET/FuseLink : channel 15 nic 0
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Using non-device net plugin version 0
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Using network FuseLink
+e01-cn-il24rbk1805:2784:2796 [1] NCCL INFO Using non-device net plugin version 0
+e01-cn-il24rbk1805:2784:2796 [1] NCCL INFO Using network FuseLink
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO DMA-BUF is available on GPU device 0
+e01-cn-il24rbk1805:2784:2796 [1] NCCL INFO DMA-BUF is available on GPU device 1
+e01-cn-il24rbk1805:2784:2796 [1] NCCL INFO comm 0x55c8e336a380 rank 1 nranks 2 cudaDev 1 nvmlDev 1 busId db000 commId 0x3896ce0ff71f6cfd - Init START
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO comm 0x55c8e3514700 rank 0 nranks 2 cudaDev 0 nvmlDev 0 busId bb000 commId 0x3896ce0ff71f6cfd - Init START
+e01-cn-il24rbk1805:2784:2796 [1] NCCL INFO Setting affinity for GPU 1 to ffffffff,ffffffff,00000000,00000000,ffffffff,ffffffff,00000000,00000000
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Setting affinity for GPU 0 to ffffffff,ffffffff,00000000,00000000,ffffffff,ffffffff,00000000,00000000
+e01-cn-il24rbk1805:2784:2796 [1] NCCL INFO Trees [0] -1/-1/-1->1->0 [1] -1/-1/-1->1->0 [2] -1/-1/-1->1->0 [3] -1/-1/-1->1->0 [4] -1/-1/-1->1->0 [5] -1/-1/-1->1->0 [6] 0/-1/-1->1->-1 [7] 0/-1/-1->1->-1 [8] 0/-1/-1->1->-1 [9] 0/-1/-1->1->-1 [10] 0/-1/-1->1->-1 [11] 0/-1/-1->1->-1 [12] -1/-1/-1->1->0 [13] -1/-1/-1->1->0 [14] -1/-1/-1->1->0 [15] -1/-1/-1->1->0 [16] -1/-1/-1->1->0 [17] -1/-1/-1->1->0 [18] 0/-1/-1->1->-1 [19] 0/-1/-1->1->-1 [20] 0/-1/-1->1->-1 [21] 0/-1/-1->1->-1 [22] 0/-1/-1->1->-1 [23] 0/-1/-1->1->-1
+e01-cn-il24rbk1805:2784:2796 [1] NCCL INFO P2P Chunksize set to 524288
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 00/24 :    0   1
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 01/24 :    0   1
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 02/24 :    0   1
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 03/24 :    0   1
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 04/24 :    0   1
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 05/24 :    0   1
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 06/24 :    0   1
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 07/24 :    0   1
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 08/24 :    0   1
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 09/24 :    0   1
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 10/24 :    0   1
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 11/24 :    0   1
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 12/24 :    0   1
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 13/24 :    0   1
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 14/24 :    0   1
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 15/24 :    0   1
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 16/24 :    0   1
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 17/24 :    0   1
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 18/24 :    0   1
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 19/24 :    0   1
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 20/24 :    0   1
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 21/24 :    0   1
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 22/24 :    0   1
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 23/24 :    0   1
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Trees [0] 1/-1/-1->0->-1 [1] 1/-1/-1->0->-1 [2] 1/-1/-1->0->-1 [3] 1/-1/-1->0->-1 [4] 1/-1/-1->0->-1 [5] 1/-1/-1->0->-1 [6] -1/-1/-1->0->1 [7] -1/-1/-1->0->1 [8] -1/-1/-1->0->1 [9] -1/-1/-1->0->1 [10] -1/-1/-1->0->1 [11] -1/-1/-1->0->1 [12] 1/-1/-1->0->-1 [13] 1/-1/-1->0->-1 [14] 1/-1/-1->0->-1 [15] 1/-1/-1->0->-1 [16] 1/-1/-1->0->-1 [17] 1/-1/-1->0->-1 [18] -1/-1/-1->0->1 [19] -1/-1/-1->0->1 [20] -1/-1/-1->0->1 [21] -1/-1/-1->0->1 [22] -1/-1/-1->0->1 [23] -1/-1/-1->0->1
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO P2P Chunksize set to 524288
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 00/0 : 0[0] -> 1[1] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 01/0 : 0[0] -> 1[1] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 02/0 : 0[0] -> 1[1] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 03/0 : 0[0] -> 1[1] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 04/0 : 0[0] -> 1[1] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 05/0 : 0[0] -> 1[1] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 06/0 : 0[0] -> 1[1] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 07/0 : 0[0] -> 1[1] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 08/0 : 0[0] -> 1[1] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 09/0 : 0[0] -> 1[1] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 10/0 : 0[0] -> 1[1] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 11/0 : 0[0] -> 1[1] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 12/0 : 0[0] -> 1[1] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 13/0 : 0[0] -> 1[1] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 14/0 : 0[0] -> 1[1] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 15/0 : 0[0] -> 1[1] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 16/0 : 0[0] -> 1[1] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 17/0 : 0[0] -> 1[1] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 18/0 : 0[0] -> 1[1] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 19/0 : 0[0] -> 1[1] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 20/0 : 0[0] -> 1[1] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 21/0 : 0[0] -> 1[1] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2796 [1] NCCL INFO Channel 00/0 : 1[1] -> 0[0] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 22/0 : 0[0] -> 1[1] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2796 [1] NCCL INFO Channel 01/0 : 1[1] -> 0[0] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Channel 23/0 : 0[0] -> 1[1] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2796 [1] NCCL INFO Channel 02/0 : 1[1] -> 0[0] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2796 [1] NCCL INFO Channel 03/0 : 1[1] -> 0[0] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2796 [1] NCCL INFO Channel 04/0 : 1[1] -> 0[0] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2796 [1] NCCL INFO Channel 05/0 : 1[1] -> 0[0] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2796 [1] NCCL INFO Channel 06/0 : 1[1] -> 0[0] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2796 [1] NCCL INFO Channel 07/0 : 1[1] -> 0[0] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2796 [1] NCCL INFO Channel 08/0 : 1[1] -> 0[0] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2796 [1] NCCL INFO Channel 09/0 : 1[1] -> 0[0] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2796 [1] NCCL INFO Channel 10/0 : 1[1] -> 0[0] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2796 [1] NCCL INFO Channel 11/0 : 1[1] -> 0[0] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2796 [1] NCCL INFO Channel 12/0 : 1[1] -> 0[0] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2796 [1] NCCL INFO Channel 13/0 : 1[1] -> 0[0] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2796 [1] NCCL INFO Channel 14/0 : 1[1] -> 0[0] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2796 [1] NCCL INFO Channel 15/0 : 1[1] -> 0[0] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2796 [1] NCCL INFO Channel 16/0 : 1[1] -> 0[0] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2796 [1] NCCL INFO Channel 17/0 : 1[1] -> 0[0] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2796 [1] NCCL INFO Channel 18/0 : 1[1] -> 0[0] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2796 [1] NCCL INFO Channel 19/0 : 1[1] -> 0[0] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2796 [1] NCCL INFO Channel 20/0 : 1[1] -> 0[0] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2796 [1] NCCL INFO Channel 21/0 : 1[1] -> 0[0] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2796 [1] NCCL INFO Channel 22/0 : 1[1] -> 0[0] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2796 [1] NCCL INFO Channel 23/0 : 1[1] -> 0[0] via P2P/direct pointer
+e01-cn-il24rbk1805:2784:2796 [1] NCCL INFO Connected all rings
+e01-cn-il24rbk1805:2784:2796 [1] NCCL INFO Connected all trees
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Connected all rings
+e01-cn-il24rbk1805:2784:2796 [1] NCCL INFO threadThresholds 8/8/64 | 16/8/64 | 512 | 512
+e01-cn-il24rbk1805:2784:2796 [1] NCCL INFO 24 coll channels, 0 nvls channels, 32 p2p channels, 32 p2p channels per peer
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO Connected all trees
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO threadThresholds 8/8/64 | 16/8/64 | 512 | 512
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO 24 coll channels, 0 nvls channels, 32 p2p channels, 32 p2p channels per peer
+e01-cn-il24rbk1805:2784:2796 [1] NCCL INFO comm 0x55c8e336a380 rank 1 nranks 2 cudaDev 1 nvmlDev 1 busId db000 commId 0x3896ce0ff71f6cfd - Init COMPLETE
+e01-cn-il24rbk1805:2784:2795 [0] NCCL INFO comm 0x55c8e3514700 rank 0 nranks 2 cudaDev 0 nvmlDev 0 busId bb000 commId 0x3896ce0ff71f6cfd - Init COMPLETE
+#
+#                                                              out-of-place                       in-place
+#       size         count      type   redop    root     time   algbw   busbw  #wrong     time   algbw   busbw  #wrong
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)             (us)  (GB/s)  (GB/s)        
+           8             2     float     sum      -1    16.88    0.00    0.00       0    13.32    0.00    0.00       0
+          16             4     float     sum      -1    14.11    0.00    0.00       0    13.22    0.00    0.00       0
+          32             8     float     sum      -1    12.86    0.00    0.00       0    13.63    0.00    0.00       0
+          64            16     float     sum      -1    13.90    0.00    0.00       0    13.06    0.00    0.00       0
+         128            32     float     sum      -1    13.23    0.01    0.01       0    13.26    0.01    0.01       0
+         256            64     float     sum      -1    13.68    0.02    0.02       0    30.25    0.01    0.01       0
+         512           128     float     sum      -1    14.75    0.03    0.03       0    13.70    0.04    0.04       0
+        1024           256     float     sum      -1    14.98    0.07    0.07       0    13.77    0.07    0.07       0
+        2048           512     float     sum      -1    14.74    0.14    0.14       0    14.80    0.14    0.14       0
+        4096          1024     float     sum      -1    15.85    0.26    0.26       0    14.71    0.28    0.28       0
+        8192          2048     float     sum      -1    15.50    0.53    0.53       0    15.01    0.55    0.55       0
+       16384          4096     float     sum      -1    16.05    1.02    1.02       0    16.33    1.00    1.00       0
+       32768          8192     float     sum      -1    16.20    2.02    2.02       0    17.33    1.89    1.89       0
+       65536         16384     float     sum      -1    16.91    3.87    3.87       0    23.17    2.83    2.83       0
+      131072         32768     float     sum      -1    24.49    5.35    5.35       0    29.75    4.41    4.41       0
+      262144         65536     float     sum      -1    28.29    9.27    9.27       0    24.60   10.66   10.66       0
+      524288        131072     float     sum      -1    28.74   18.24   18.24       0    27.95   18.76   18.76       0
+     1048576        262144     float     sum      -1    41.73   25.13   25.13       0    47.28   22.18   22.18       0
+e01-cn-il24rbk1805:2784:2784 [1] NCCL INFO comm 0x55c8e3514700 rank 0 nranks 2 cudaDev 0 busId bb000 - Destroy COMPLETE
+e01-cn-il24rbk1805:2784:2784 [1] NCCL INFO comm 0x55c8e336a380 rank 1 nranks 2 cudaDev 1 busId db000 - Destroy COMPLETE
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 3.57759 
+#
+# Collective test concluded: all_reduce_perf
+#
+
