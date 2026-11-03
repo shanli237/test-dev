@@ -61,7 +61,7 @@ make -C /workspace/FuseLink/nccl-tests -j4 \
   BUILDDIR=build-cuda122-mpi MPI=1 MPI_HOME=/usr \
   MPI_INCLUDE=/usr/lib/x86_64-linux-gnu/openmpi/include \
   CUDA_HOME="$CUDA_HOME" NCCL_HOME="$PWD/nccl/build" CXX="$CXX" \
-  NVCC_GENCODE='-gencode=arch=compute_89,code=sm_89'
+  NVCC_GENCODE='-gencode=arch=compute_89,code=[sm_89,compute_89]'
 ```
 
 ## 在 11.163.39.111 启动
@@ -85,3 +85,6 @@ eth0 用于 bootstrap，mlx5_bond_5/6 用于 RDMA，NIC 对应可见 GPU 0/1，
 日志保存在启动节点 build/logs/multinode.log。
 
 系统安装、SSH 配置、驱动、CUDA Toolkit 不会被 Git 同步。
+
+也可使用 `bash scripts/build_mpi_tests.sh` 构建 MPI 测试程序。
+本机测试要求 nccl-tests 包含 PTX；仅 sm_89 二进制曾报 no kernel image。
