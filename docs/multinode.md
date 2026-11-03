@@ -61,7 +61,11 @@ make -C /workspace/FuseLink/nccl-tests -j4 \
   BUILDDIR=build-cuda122-mpi MPI=1 MPI_HOME=/usr \
   MPI_INCLUDE=/usr/lib/x86_64-linux-gnu/openmpi/include \
   CUDA_HOME="$CUDA_HOME" NCCL_HOME="$PWD/nccl/build" CXX="$CXX" \
+<<<<<<< HEAD
   NVCC_GENCODE='-gencode=arch=compute_89,code=compute_89'
+=======
+  NVCC_GENCODE='-gencode=arch=compute_89,code=[sm_89,compute_89]'
+>>>>>>> origin/main
 ```
 
 ## 在 11.163.39.111 启动
@@ -86,6 +90,7 @@ eth0 用于 bootstrap，mlx5_bond_5/6 用于 RDMA，NIC 对应可见 GPU 0/1，
 
 系统安装、SSH 配置、驱动、CUDA Toolkit 不会被 Git 同步。
 
+<<<<<<< HEAD
 ## .110 Docker SSH（22222 端口）
 
 .110 当前容器的独立 SSH 服务监听 `11.163.39.110:22222`，仅接受 root 公钥登录。
@@ -109,3 +114,7 @@ mpirun --allow-run-as-root --hostfile config/hosts.two_nodes -np 2 \
 当前服务已启动；容器重启后运行 `bash scripts/start_container_sshd.sh`。
 此服务没有自动接入容器 entrypoint；重建容器时需持久化或重新部署
 `/etc/ssh/sshd_config_fuselink`、host keys 和 `/root/.ssh/authorized_keys`。
+=======
+也可使用 `bash scripts/build_mpi_tests.sh` 构建 MPI 测试程序。
+本机测试要求 nccl-tests 包含 PTX；仅 sm_89 二进制曾报 no kernel image。
+>>>>>>> origin/main
