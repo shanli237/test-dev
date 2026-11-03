@@ -4,8 +4,11 @@ cd "$(dirname "$0")/.."
 command -v mpirun >/dev/null || { echo 'Install Open MPI on both nodes first.' >&2; exit 1; }
 args=()
 if [[ $(id -u) == 0 ]]; then args+=(--allow-run-as-root); fi
+export NCCL_IB_GID_INDEX="${NCCL_IB_GID_INDEX:-3}"
 mkdir -p build/logs
 mpirun "${args[@]}" --hostfile config/hosts.two_nodes -np 2 \
   --map-by ppr:1:node --bind-to none \
+  --mca btl_tcp_if_include eth0 --mca oob_tcp_if_include eth0 \
+  -x NCCL_IB_GID_INDEX \
   bash /workspace/FuseLink/FuseLink/scripts/run_multinode_rank.sh \
   2>&1 | tee build/logs/multinode.log

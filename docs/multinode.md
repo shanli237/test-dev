@@ -61,7 +61,7 @@ make -C /workspace/FuseLink/nccl-tests -j4 \
   BUILDDIR=build-cuda122-mpi MPI=1 MPI_HOME=/usr \
   MPI_INCLUDE=/usr/lib/x86_64-linux-gnu/openmpi/include \
   CUDA_HOME="$CUDA_HOME" NCCL_HOME="$PWD/nccl/build" CXX="$CXX" \
-  NVCC_GENCODE='-gencode=arch=compute_89,code=sm_89'
+  NVCC_GENCODE='-gencode=arch=compute_89,code=compute_89'
 ```
 
 ## 在 11.163.39.111 启动
@@ -69,7 +69,7 @@ make -C /workspace/FuseLink/nccl-tests -j4 \
 配置 root 到第二台的免密 SSH，确认远程运行环境可访问 GPU 和 RDMA 设备：
 
 ```bash
-ssh root@11.163.39.110 hostname
+ssh root@11.163.39.110 'hostname; test -x /workspace/FuseLink/nccl-tests/build-cuda122-mpi/all_reduce_perf; command -v orted'
 mpirun --allow-run-as-root --hostfile config/hosts.two_nodes \
   -np 2 --map-by ppr:1:node hostname
 bash scripts/test_multinode.sh
@@ -85,3 +85,27 @@ eth0 用于 bootstrap，mlx5_bond_5/6 用于 RDMA，NIC 对应可见 GPU 0/1，
 日志保存在启动节点 build/logs/multinode.log。
 
 系统安装、SSH 配置、驱动、CUDA Toolkit 不会被 Git 同步。
+
+## .110 Docker SSH（22222 端口）
+
+.110 当前容器的独立 SSH 服务监听 `11.163.39.110:22222`，仅接受 root 公钥登录。
+22 端口属于宿主环境，不用于启动本容器中的 MPI。
+将 .111 启动用户的公钥加入本容器 `/root/.ssh/authorized_keys`（权限 600）。
+在 .111 将 `config/ssh.node110.example` 中的配置合并到 `~/.ssh/config`，
+按实际密钥路径调整 IdentityFile。不要给所有 MPI 节点统一设置 22222 端口。
+
+```bash
+# 在 .111 执行，首次确认主机公钥指纹后写入 known_hosts
+ssh -o BatchMode=no root@11.163.39.110 \
+  'test -f /.dockerenv && echo DOCKER_SSH_OK; command -v orted'
+# 随后验证 MPI 的远程启动环境
+mpirun --allow-run-as-root --hostfile config/hosts.two_nodes -np 2 \
+  --map-by ppr:1:node --bind-to none \
+  bash -c 'hostname; test -f /.dockerenv && echo DOCKER; command -v orted'
+```
+
+.110 容器 ED25519 指纹：
+`SHA256:qKnd4SGvCgWSH4UA5QGxpI9tUsjVhQze8GA/UDW+ZIo`。
+当前服务已启动；容器重启后运行 `bash scripts/start_container_sshd.sh`。
+此服务没有自动接入容器 entrypoint；重建容器时需持久化或重新部署
+`/etc/ssh/sshd_config_fuselink`、host keys 和 `/root/.ssh/authorized_keys`。

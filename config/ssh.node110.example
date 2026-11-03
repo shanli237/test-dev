@@ -1,0 +1,8 @@
+# Merge this stanza into ~/.ssh/config on .111 (before any Host * defaults).
+Host 11.163.39.110
+    HostName 11.163.39.110
+    Port 22222
+    User root
+    IdentityFile ~/.ssh/id_ed25519
+    IdentitiesOnly yes
+    BatchMode yes
