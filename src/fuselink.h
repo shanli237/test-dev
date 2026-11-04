@@ -376,7 +376,15 @@ static inline void FuseLinkMemRegionInit(int nGPUs, int nNics, int* NIC2GPU, voi
     FL_CUCHECK(cuMemGetAllocationGranularity(&granularity, &prop, CU_MEM_ALLOC_GRANULARITY_MINIMUM));
     aligned_sz = ((size + granularity - 1) / granularity) * granularity;
     
-    FL_CUCHECK(cuMemCreate(&flmr->hdl[i], aligned_sz, &prop, 0));
+    // Preserve NCCL's allocation and any existing P2P/IPC mappings.
+    if (i == target_nic_dev) {
+      FL_CUCHECK(cuMemRetainAllocationHandle(&flmr->hdl[i], base_addr));
+      flmr->addr[i] = (CUdeviceptr)base_addr;
+      flmr->mr[i] = nullptr;
+      continue;
+    } else {
+      FL_CUCHECK(cuMemCreate(&flmr->hdl[i], aligned_sz, &prop, 0));
+    }
     
     // create address range
     FL_CUCHECK(cuMemAddressReserve(&flmr->addr[i], aligned_sz, 0, 0, 0));
@@ -391,22 +399,6 @@ static inline void FuseLinkMemRegionInit(int nGPUs, int nNics, int* NIC2GPU, voi
     FL_CUCHECK(cuMemSetAccess(flmr->addr[i], aligned_sz, &accessDesc, 1));
 
   }
-  
-  CUmemGenericAllocationHandle origin_hdl;
-  FL_CUCHECK(cuMemRetainAllocationHandle(&origin_hdl, base_addr));
-  FL_CUCHECK(cuMemUnmap((CUdeviceptr) base_addr, aligned_sz));
-  // get the original handle
-  FL_CUCHECK(cuMemRelease(origin_hdl));
-  
-  // printf("map buffer from gpu %d to target gpu %d for nic %d\n", src_dev, NIC2GPU[target_nic_dev], target_nic_dev);
-  FL_CUCHECK(cuMemMap((CUdeviceptr) base_addr, aligned_sz, 0, flmr->hdl[target_nic_dev], 0));
-  
-  // set access to base_addr
-  CUmemAccessDesc accessDesc = {};
-  accessDesc.location.type = CU_MEM_LOCATION_TYPE_DEVICE;
-  accessDesc.location.id = src_dev; // enable access from the source gpu
-  accessDesc.flags = CU_MEM_ACCESS_FLAGS_PROT_READWRITE;
-  FL_CUCHECK(cuMemSetAccess((CUdeviceptr) base_addr, aligned_sz, &accessDesc, 1));
   
   flmr->start_addr = (uintptr_t) base_addr;
   flmr->dev = NIC2GPU[target_nic_dev];

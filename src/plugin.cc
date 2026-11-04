@@ -61,8 +61,8 @@ int Channel2NIC[FUSELINK_MAX_NCHANNEL]; // Channel index to NIC index, -1 if not
 
 /* Every channel connects to all NICs */
 
-FuseLinkComm* fuselink_send_comm_[FUSELINK_MAX_NCHANNEL][MAX_NIC_NUM]; // initialized as nullptr
-FuseLinkComm* fuselink_recv_comm_[FUSELINK_MAX_NCHANNEL][MAX_NIC_NUM];
+
+
 
 
 struct alignas(64) ncclIbDev {
@@ -579,6 +579,8 @@ struct ncclIbSendComm {
   int* nsteps;
 
   uintptr_t request_addr;
+  FuseLinkComm* connections[MAX_NIC_NUM];
+  int eceSupported[MAX_NIC_NUM];
 };
 // The SendFifo needs to be 32-byte aligned and each element needs
 // to be a 32-byte multiple, so that an entry does not get split and
@@ -633,6 +635,7 @@ struct ncclIbRecvComm {
   int* nsteps;
   // done
   uintptr_t request_addr;
+  FuseLinkComm* connections[MAX_NIC_NUM];
 };
 static_assert((offsetof(struct ncclIbRecvComm, remFifo) % 32) == 0, "ncclIbSendComm fifo must be 32-byte aligned");
 
@@ -837,15 +840,16 @@ ib_connect_check:
   // RDMA connection set up, including control qp and data qp
   struct ibv_context* ctx;
   struct ncclIbQpInfo qpInfos[MAX_NIC_NUM];
+  memset(qpInfos, 0, sizeof(qpInfos));
   for (uint nicdev = 0; nicdev < ncclNIbDevs; nicdev++) {
     INFO(NCCL_INIT|NCCL_NET, "NET/FuseLink : set up send channel %d nicdev %d", channelId, nicdev);
     ctx = ncclIbDevs[nicdev].context;
     // similar to ncclIbInitIbVerbs
-    NCCLCHECK(FuseLinkInitSendComm(nicdev, ctx, &fuselink_send_comm_[channelId][nicdev]));
-    if (fuselink_send_comm_[channelId][nicdev] == NULL) {
+    NCCLCHECK(FuseLinkInitSendComm(nicdev, ctx, &comm->connections[nicdev]));
+    if (comm->connections[nicdev] == NULL) {
       return ncclInternalError;
     }
-    FuseLinkComm* fl_send_comm = fuselink_send_comm_[channelId][nicdev];
+    FuseLinkComm* fl_send_comm = comm->connections[nicdev];
     uint8_t ib_port;
     ib_port = ncclIbDevs[nicdev].port;
     NCCLCHECK(FuseLinkCreateQp(ib_port, fl_send_comm->cq, fl_send_comm->pd, \
@@ -861,6 +865,7 @@ ib_connect_check:
     // query ece capabilities
     
     NCCLCHECK(wrap_ibv_query_ece(fl_send_comm->qp, &qpInfos[nicdev].ece[0], &qpInfos[nicdev].ece_supported[0]));
+    comm->eceSupported[nicdev] = qpInfos[nicdev].ece_supported[0];
 
     qpInfos[nicdev].mtu = portAttr.active_mtu;
     qpInfos[nicdev].lid = portAttr.lid;
@@ -910,10 +915,9 @@ ib_connect:
 
   for (uint nicdev = 0; nicdev < ncclNIbDevs; nicdev++) {
     struct ncclIbQpInfo& remQpInfo = remQpInfos[nicdev];
-    struct ibv_qp* qp = fuselink_send_comm_[channelId][nicdev]->qp;
-    struct ncclIbQpInfo& qpInfo = qpInfos[nicdev];
-    if (remQpInfo.ece_supported[0] && qpInfo.ece_supported[0])
-      NCCLCHECK(wrap_ibv_set_ece(qp, &remQpInfo.ece[0], &qpInfo.ece_supported[0]));
+    struct ibv_qp* qp = comm->connections[nicdev]->qp;
+    if (remQpInfo.ece_supported[0] && comm->eceSupported[nicdev])
+      NCCLCHECK(wrap_ibv_set_ece(qp, &remQpInfo.ece[0], &comm->eceSupported[nicdev]));
 
     NCCLCHECK(ncclIbRtrQp(qp, remQpInfo.qpn[0], &remQpInfo));
     NCCLCHECK(ncclIbRtsQp(qp));
@@ -932,9 +936,9 @@ ib_send_ready:
   stage->state = ncclIbCommStateStart;
 
   *sendComm = comm;
-  comm->control_comm = fuselink_send_comm_[channelId][dev];
+  comm->control_comm = comm->connections[dev];
   INFO(NCCL_INIT, "send Control comm dev %d", comm->control_comm->dev_);
-  comm->data_comm = fuselink_send_comm_[channelId][dev];
+  comm->data_comm = comm->connections[dev];
   INFO(NCCL_INIT|NCCL_NET, "channel id %d sendcomm %p control at %p dev %d", comm->channelId, comm, comm->control_comm, comm->control_comm->dev_);
   return ncclSuccess;
 }
@@ -1006,6 +1010,7 @@ ib_recv:
   // rComm->gidInfo.remoteGid.global.subnet_prefix = remQpInfo.spn;
   // rComm->gidInfo.remoteGid.global.interface_id = remQpInfo.iid;
 
+  memset(qpInfos, 0, sizeof(qpInfos));
   // IB setup with multiple qps over multiple NICs
   for (uint nicdev = 0; nicdev < ncclNIbDevs; nicdev++) {
     INFO(NCCL_INIT|NCCL_NET, "NET/FuseLink : set up recv channel %d nicdev %d", channelId, nicdev);
@@ -1014,8 +1019,8 @@ ib_recv:
     struct ibv_port_attr portAttr;
     NCCLCHECK(wrap_ibv_query_port(ctx, ib_port, &portAttr));
 
-    FuseLinkInitRecvComm(nicdev, ctx, &fuselink_recv_comm_[channelId][nicdev]);
-    FuseLinkComm* fl_recv_comm = fuselink_recv_comm_[channelId][nicdev];
+    NCCLCHECK(FuseLinkInitRecvComm(nicdev, ctx, &rComm->connections[nicdev]));
+    FuseLinkComm* fl_recv_comm = rComm->connections[nicdev];
 
     NCCLCHECK(wrap_ibv_query_gid(ctx, ib_port, ncclParamIbGidIndex(), &fl_recv_comm->gidInfo.localGid));
 
@@ -1038,9 +1043,9 @@ ib_recv:
     NCCLCHECK(ncclIbRtsQp(fl_recv_comm->qp));
   }
 
-  rComm->control_comm = fuselink_recv_comm_[channelId][lComm->dev];
+  rComm->control_comm = rComm->connections[lComm->dev];
   INFO(NCCL_INIT, "recv Control comm dev %d", rComm->control_comm->dev_);
-  rComm->data_comm = fuselink_recv_comm_[channelId][lComm->dev];
+  rComm->data_comm = rComm->connections[lComm->dev];
 
   // Retain remote fifo info and prepare my RDMA ops
   rComm->remFifo.rkey = remQpInfos[lComm->dev].fifoRkey;
@@ -1084,11 +1089,11 @@ ib_recv:
     NCCLCHECK(wrap_ibv_query_port(ctx, ib_port, &portAttr));
     qpInfo.lid=portAttr.lid;
     qpInfo.link_layer= portAttr.link_layer;
-    fuselink_recv_comm_[channelId][nicdev]->gidInfo.link_layer = portAttr.link_layer;
+    rComm->connections[nicdev]->gidInfo.link_layer = portAttr.link_layer;
     qpInfo.ib_port=ib_port;
-    qpInfo.qpn[0] = fuselink_recv_comm_[channelId][nicdev]->qp->qp_num;
-    qpInfo.spn = fuselink_recv_comm_[channelId][nicdev]->gidInfo.localGid.global.subnet_prefix;
-    qpInfo.iid = fuselink_recv_comm_[channelId][nicdev]->gidInfo.localGid.global.interface_id;
+    qpInfo.qpn[0] = rComm->connections[nicdev]->qp->qp_num;
+    qpInfo.spn = rComm->connections[nicdev]->gidInfo.localGid.global.subnet_prefix;
+    qpInfo.iid = rComm->connections[nicdev]->gidInfo.localGid.global.interface_id;
     qpInfo.mtu = remQpInfos[nicdev].mtu;
   }
   // qpInfo.lid=portAttr.lid;
@@ -1369,11 +1374,11 @@ ncclResult_t FuseLinkDeregMr(FuseLinkMemRegion* flmr) {
       if (flmr->addr[i] != 0) {
         INFO(NCCL_NET, "FuseLink memregion DESTROY: unmap and free addr %p size %zu, nic2gpu %d dev %d target nic %d", \
            flmr->addr[i], flmr->sz, flmr->nic2gpu[i], flmr->dev, flmr->nic_dev);
-        MYCUCHECK(cuMemUnmap(flmr->addr[i], flmr->sz));
-        MYCUCHECK(cuMemAddressFree(flmr->addr[i], flmr->sz));
-        if (flmr->nic2gpu[i] != flmr->dev) {
-          MYCUCHECK(cuMemRelease(flmr->hdl[i]));
+        if (flmr->addr[i] != flmr->start_addr) {
+          MYCUCHECK(cuMemUnmap(flmr->addr[i], flmr->sz));
+          MYCUCHECK(cuMemAddressFree(flmr->addr[i], flmr->sz));
         }
+        MYCUCHECK(cuMemRelease(flmr->hdl[i]));
       }
     }
   }
@@ -1918,8 +1923,8 @@ ncclResult_t ncclIbCloseSend(void* sendComm) {
     int channelId = comm->channelId;
     NCCLCHECK(ncclSocketClose(&comm->sock));
     for (uint i = 0; i < ncclNIbDevs; i++) {
-      if (fuselink_send_comm_[channelId][i] != NULL) {
-        NCCLCHECK(FuseLinkCloseSend(fuselink_send_comm_[channelId][i]));
+      if (comm->connections[i] != NULL) {
+        NCCLCHECK(FuseLinkCloseSend(comm->connections[i]));
       }
     }
     if (comm->fifoMr != NULL) NCCLCHECK(wrap_ibv_dereg_mr(comm->fifoMr));
@@ -1948,8 +1953,8 @@ ncclResult_t ncclIbCloseRecv(void* recvComm) {
     int channelId = comm->channelId;
     NCCLCHECK(ncclSocketClose(&comm->sock));
     for (uint i = 0; i < ncclNIbDevs; i++) {
-      if (fuselink_recv_comm_[channelId][i] != NULL) {
-        NCCLCHECK(FuseLinkCloseRecv(fuselink_recv_comm_[channelId][i]));
+      if (comm->connections[i] != NULL) {
+        NCCLCHECK(FuseLinkCloseRecv(comm->connections[i]));
       }
     }
     if (comm->gpuFlush.enabled) {

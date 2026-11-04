@@ -1,0 +1,13 @@
+STOP: fewer than two GPUs idle in both samples (0% utilization, <=256 MiB, no visible compute process)
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+Selected GPUs: physical 5, GPU-045e62f4-d04d-2f9e-e456-1fb82810029f, 27 MiB, physical 3, GPU-77463de9-85e0-a6f3-2c7e-f1147d6f7f49, 36 MiB
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[15612,1],1]
+  Exit code:    1
+--------------------------------------------------------------------------
