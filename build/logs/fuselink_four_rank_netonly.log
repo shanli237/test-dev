@@ -1,0 +1,214 @@
+Selected GPUs: physical 7, GPU-31a509fd-e741-5ab8-b837-443ad986c404, 11 MiB, physical 4, GPU-4a493131-84b9-4c88-18ee-50fc6f213a36, 87 MiB
+Node e01-cn-v8n4s5sfd01 GPUs=GPU-31a509fd-e741-5ab8-b837-443ad986c404,GPU-4a493131-84b9-4c88-18ee-50fc6f213a36 NIC==mlx5_bond_7
+Selected GPUs: physical 0, GPU-80d8e94e-9b13-9017-cc9c-c34a27912baf, 0 MiB, physical 1, GPU-e25370b9-1b35-87fd-c564-06b84406363e, 0 MiB
+Node e01-cn-yb84rbk1807 GPUs=GPU-80d8e94e-9b13-9017-cc9c-c34a27912baf,GPU-e25370b9-1b35-87fd-c564-06b84406363e NIC==mlx5_bond_5
+# nccl-tests version 2.21.1 (afd59ab) nccl-headers=21904 nccl-library=21904
+# Collective test starting: all_reduce_perf
+# nThread 1 nGpus 2 minBytes 8 maxBytes 65536 step: 2(factor) warmup iters: 1 iters: 3 agg iters: 1 validation: 1 graph: 0 unalign: 0
+#
+# Using devices
+#  Rank  0 Group  0 Pid   2637 on e01-cn-v8n4s5sfd01 device  0 [0000:eb:00] NVIDIA L20D
+#  Rank  1 Group  0 Pid   2637 on e01-cn-v8n4s5sfd01 device  1 [0000:9b:00] NVIDIA L20D
+#  Rank  2 Group  0 Pid  17834 on e01-cn-yb84rbk1807 device  0 [0000:bb:00] NVIDIA L20D
+#  Rank  3 Group  0 Pid  17834 on e01-cn-yb84rbk1807 device  1 [0000:db:00] NVIDIA L20D
+e01-cn-v8n4s5sfd01:2637:2637 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to =eth0
+e01-cn-v8n4s5sfd01:2637:2637 [0] NCCL INFO Bootstrap : Using eth0:11.163.39.114<0>
+e01-cn-v8n4s5sfd01:2637:2637 [0] NCCL INFO Plugin name set by env to libnccl-net-fuselink.so
+e01-cn-v8n4s5sfd01:2637:2637 [0] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v7 symbol.
+e01-cn-v8n4s5sfd01:2637:2637 [0] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin symbol (>= v5). ncclCollNetPlugin symbols v4 and lower are not supported.
+e01-cn-v8n4s5sfd01:2637:2637 [0] NCCL INFO cudaDriverVersion 13000
+NCCL version 2.19.4+cuda12.2
+e01-cn-yb84rbk1807:17834:17834 [0] NCCL INFO cudaDriverVersion 13000
+e01-cn-yb84rbk1807:17834:17834 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to =eth0
+e01-cn-yb84rbk1807:17834:17834 [0] NCCL INFO Bootstrap : Using eth0:11.163.39.110<0>
+e01-cn-yb84rbk1807:17834:17834 [0] NCCL INFO Plugin name set by env to libnccl-net-fuselink.so
+e01-cn-yb84rbk1807:17834:17834 [0] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v7 symbol.
+e01-cn-yb84rbk1807:17834:17834 [0] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin symbol (>= v5). ncclCollNetPlugin symbols v4 and lower are not supported.
+e01-cn-v8n4s5sfd01:2637:2664 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to =eth0
+e01-cn-v8n4s5sfd01:2637:2664 [0] NCCL INFO NCCL_IB_HCA set to =mlx5_bond_7
+e01-cn-v8n4s5sfd01:2637:2664 [0] NCCL INFO NET/FuseLink : Using [0]mlx5_bond_7:1/RoCE ; OOB eth0:11.163.39.114<0>
+
+e01-cn-v8n4s5sfd01:2637:2664 [0] src/plugin.cc:316 NCCL WARN 
+
+=======================
+NET/FuseLink: init done
+
+FuseLink is in very early stage of development, use in caution.
+=======================
+e01-cn-v8n4s5sfd01:2637:2664 [0] NCCL INFO NET/FuseLink : channel 0 nic 0
+e01-cn-v8n4s5sfd01:2637:2664 [0] NCCL INFO NET/FuseLink : channel 1 nic -1
+e01-cn-v8n4s5sfd01:2637:2664 [0] NCCL INFO NET/FuseLink : channel 2 nic -1
+e01-cn-v8n4s5sfd01:2637:2664 [0] NCCL INFO NET/FuseLink : channel 3 nic -1
+e01-cn-v8n4s5sfd01:2637:2664 [0] NCCL INFO NET/FuseLink : channel 4 nic -1
+e01-cn-v8n4s5sfd01:2637:2664 [0] NCCL INFO NET/FuseLink : channel 5 nic -1
+e01-cn-v8n4s5sfd01:2637:2664 [0] NCCL INFO NET/FuseLink : channel 6 nic -1
+e01-cn-v8n4s5sfd01:2637:2664 [0] NCCL INFO NET/FuseLink : channel 7 nic -1
+e01-cn-v8n4s5sfd01:2637:2664 [0] NCCL INFO NET/FuseLink : channel 8 nic -1
+e01-cn-v8n4s5sfd01:2637:2664 [0] NCCL INFO NET/FuseLink : channel 9 nic -1
+e01-cn-v8n4s5sfd01:2637:2664 [0] NCCL INFO NET/FuseLink : channel 10 nic -1
+e01-cn-v8n4s5sfd01:2637:2664 [0] NCCL INFO NET/FuseLink : channel 11 nic -1
+e01-cn-v8n4s5sfd01:2637:2664 [0] NCCL INFO NET/FuseLink : channel 12 nic -1
+e01-cn-v8n4s5sfd01:2637:2664 [0] NCCL INFO NET/FuseLink : channel 13 nic -1
+e01-cn-v8n4s5sfd01:2637:2664 [0] NCCL INFO NET/FuseLink : channel 14 nic -1
+e01-cn-v8n4s5sfd01:2637:2664 [0] NCCL INFO NET/FuseLink : channel 15 nic -1
+e01-cn-v8n4s5sfd01:2637:2664 [0] NCCL INFO Using non-device net plugin version 0
+e01-cn-v8n4s5sfd01:2637:2664 [0] NCCL INFO Using network FuseLink
+e01-cn-v8n4s5sfd01:2637:2665 [1] NCCL INFO Using non-device net plugin version 0
+e01-cn-v8n4s5sfd01:2637:2665 [1] NCCL INFO Using network FuseLink
+e01-cn-v8n4s5sfd01:2637:2664 [0] NCCL INFO NCCL_DMABUF_ENABLE set by environment to 0.
+e01-cn-yb84rbk1807:17834:17860 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to =eth0
+e01-cn-yb84rbk1807:17834:17860 [0] NCCL INFO NCCL_IB_HCA set to =mlx5_bond_5
+e01-cn-yb84rbk1807:17834:17860 [0] NCCL INFO NET/FuseLink : Using [0]mlx5_bond_5:1/RoCE ; OOB eth0:11.163.39.110<0>
+
+e01-cn-yb84rbk1807:17834:17860 [0] src/plugin.cc:316 NCCL WARN 
+
+=======================
+NET/FuseLink: init done
+
+FuseLink is in very early stage of development, use in caution.
+=======================
+e01-cn-yb84rbk1807:17834:17860 [0] NCCL INFO NET/FuseLink : channel 0 nic 0
+e01-cn-yb84rbk1807:17834:17860 [0] NCCL INFO NET/FuseLink : channel 1 nic -1
+e01-cn-yb84rbk1807:17834:17860 [0] NCCL INFO NET/FuseLink : channel 2 nic -1
+e01-cn-yb84rbk1807:17834:17860 [0] NCCL INFO NET/FuseLink : channel 3 nic -1
+e01-cn-yb84rbk1807:17834:17860 [0] NCCL INFO NET/FuseLink : channel 4 nic -1
+e01-cn-yb84rbk1807:17834:17860 [0] NCCL INFO NET/FuseLink : channel 5 nic -1
+e01-cn-yb84rbk1807:17834:17860 [0] NCCL INFO NET/FuseLink : channel 6 nic -1
+e01-cn-yb84rbk1807:17834:17860 [0] NCCL INFO NET/FuseLink : channel 7 nic -1
+e01-cn-yb84rbk1807:17834:17860 [0] NCCL INFO NET/FuseLink : channel 8 nic -1
+e01-cn-yb84rbk1807:17834:17860 [0] NCCL INFO NET/FuseLink : channel 9 nic -1
+e01-cn-yb84rbk1807:17834:17860 [0] NCCL INFO NET/FuseLink : channel 10 nic -1
+e01-cn-yb84rbk1807:17834:17860 [0] NCCL INFO NET/FuseLink : channel 11 nic -1
+e01-cn-yb84rbk1807:17834:17860 [0] NCCL INFO NET/FuseLink : channel 12 nic -1
+e01-cn-yb84rbk1807:17834:17860 [0] NCCL INFO NET/FuseLink : channel 13 nic -1
+e01-cn-yb84rbk1807:17834:17860 [0] NCCL INFO NET/FuseLink : channel 14 nic -1
+e01-cn-yb84rbk1807:17834:17860 [0] NCCL INFO NET/FuseLink : channel 15 nic -1
+e01-cn-yb84rbk1807:17834:17860 [0] NCCL INFO Using non-device net plugin version 0
+e01-cn-yb84rbk1807:17834:17860 [0] NCCL INFO Using network FuseLink
+e01-cn-yb84rbk1807:17834:17861 [1] NCCL INFO Using non-device net plugin version 0
+e01-cn-yb84rbk1807:17834:17861 [1] NCCL INFO Using network FuseLink
+e01-cn-yb84rbk1807:17834:17860 [0] NCCL INFO NCCL_DMABUF_ENABLE set by environment to 0.
+e01-cn-yb84rbk1807:17834:17861 [1] NCCL INFO comm 0x5651751a1d40 rank 3 nranks 4 cudaDev 1 nvmlDev 1 busId db000 commId 0xe76666b15481e148 - Init START
+e01-cn-v8n4s5sfd01:2637:2665 [1] NCCL INFO comm 0x555c25e574d0 rank 1 nranks 4 cudaDev 1 nvmlDev 4 busId 9b000 commId 0xe76666b15481e148 - Init START
+e01-cn-v8n4s5sfd01:2637:2664 [0] NCCL INFO comm 0x555c260015c0 rank 0 nranks 4 cudaDev 0 nvmlDev 7 busId eb000 commId 0xe76666b15481e148 - Init START
+e01-cn-yb84rbk1807:17834:17860 [0] NCCL INFO comm 0x56517534be30 rank 2 nranks 4 cudaDev 0 nvmlDev 0 busId bb000 commId 0xe76666b15481e148 - Init START
+e01-cn-v8n4s5sfd01:2637:2664 [0] NCCL INFO NCCL_P2P_LEVEL set by environment to LOC
+e01-cn-v8n4s5sfd01:2637:2664 [0] NCCL INFO NCCL_SHM_DISABLE set by environment to 1.
+e01-cn-v8n4s5sfd01:2637:2664 [0] NCCL INFO NCCL_NET_GDR_LEVEL set by environment to SYS
+e01-cn-v8n4s5sfd01:2637:2664 [0] NCCL INFO Setting affinity for GPU 7 to ffffffff,ffffffff,00000000,00000000,ffffffff,ffffffff,00000000,00000000
+e01-cn-v8n4s5sfd01:2637:2665 [1] NCCL INFO Setting affinity for GPU 4 to ffffffff,ffffffff,00000000,00000000,ffffffff,ffffffff,00000000,00000000
+e01-cn-yb84rbk1807:17834:17860 [0] NCCL INFO NCCL_P2P_LEVEL set by environment to LOC
+e01-cn-yb84rbk1807:17834:17860 [0] NCCL INFO NCCL_SHM_DISABLE set by environment to 1.
+e01-cn-yb84rbk1807:17834:17860 [0] NCCL INFO NCCL_NET_GDR_LEVEL set by environment to SYS
+e01-cn-yb84rbk1807:17834:17860 [0] NCCL INFO Setting affinity for GPU 0 to ffffffff,ffffffff,00000000,00000000,ffffffff,ffffffff,00000000,00000000
+e01-cn-yb84rbk1807:17834:17861 [1] NCCL INFO Setting affinity for GPU 1 to ffffffff,ffffffff,00000000,00000000,ffffffff,ffffffff,00000000,00000000
+e01-cn-v8n4s5sfd01:2637:2664 [0] NCCL INFO NCCL_MAX_NCHANNELS set by environment to 1.
+e01-cn-v8n4s5sfd01:2637:2664 [0] NCCL INFO NCCL_MIN_NCHANNELS set by environment to 1.
+e01-cn-v8n4s5sfd01:2637:2664 [0] NCCL INFO Channel 00/01 :    0   1   2   3
+e01-cn-yb84rbk1807:17834:17861 [1] NCCL INFO NCCL_MAX_NCHANNELS set by environment to 1.
+e01-cn-yb84rbk1807:17834:17861 [1] NCCL INFO NCCL_MIN_NCHANNELS set by environment to 1.
+e01-cn-yb84rbk1807:17834:17861 [1] NCCL INFO Trees [0] -1/-1/-1->3->2
+e01-cn-yb84rbk1807:17834:17861 [1] NCCL INFO P2P Chunksize set to 131072
+e01-cn-v8n4s5sfd01:2637:2664 [0] NCCL INFO Trees [0] 2/-1/-1->0->-1
+e01-cn-v8n4s5sfd01:2637:2664 [0] NCCL INFO P2P Chunksize set to 131072
+e01-cn-v8n4s5sfd01:2637:2665 [1] NCCL INFO Trees [0] -1/-1/-1->1->2
+e01-cn-v8n4s5sfd01:2637:2665 [1] NCCL INFO P2P Chunksize set to 131072
+e01-cn-v8n4s5sfd01:2637:2664 [0] NCCL INFO NCCL_CUMEM_ENABLE set by environment to 1.
+e01-cn-yb84rbk1807:17834:17860 [0] NCCL INFO Trees [0] 1/3/-1->2->0
+e01-cn-yb84rbk1807:17834:17860 [0] NCCL INFO P2P Chunksize set to 131072
+e01-cn-yb84rbk1807:17834:17861 [1] NCCL INFO NCCL_CUMEM_ENABLE set by environment to 1.
+e01-cn-yb84rbk1807:17834:17864 [1] NCCL INFO NCCL_FUSELINK_NCHANNELS set by environment to 1.
+e01-cn-yb84rbk1807:17834:17864 [1] NCCL INFO channel id 0 listen comm 0x7fb108009ef0 dev 0
+e01-cn-yb84rbk1807:17834:17861 [1] NCCL INFO Channel 00/0 : 2[0] -> 3[1] [receive] via NET/FuseLink/0/GDRDMA
+e01-cn-yb84rbk1807:17834:17861 [1] NCCL INFO Channel 00/0 : 3[1] -> 0[7] [send] via NET/FuseLink/0/GDRDMA
+e01-cn-yb84rbk1807:17834:17865 [0] NCCL INFO channel id 1 listen comm 0x7fb10c009ef0 dev 0
+e01-cn-yb84rbk1807:17834:17860 [0] NCCL INFO Channel 00/0 : 1[4] -> 2[0] [receive] via NET/FuseLink/0/GDRDMA
+e01-cn-yb84rbk1807:17834:17860 [0] NCCL INFO Channel 00/0 : 2[0] -> 3[1] [send] via NET/FuseLink/0/GDRDMA
+e01-cn-v8n4s5sfd01:2637:2667 [0] NCCL INFO NCCL_FUSELINK_NCHANNELS set by environment to 1.
+e01-cn-v8n4s5sfd01:2637:2667 [0] NCCL INFO channel id 0 listen comm 0x7fe6b0009f00 dev 0
+e01-cn-v8n4s5sfd01:2637:2664 [0] NCCL INFO Channel 00/0 : 3[1] -> 0[7] [receive] via NET/FuseLink/0/GDRDMA
+e01-cn-v8n4s5sfd01:2637:2664 [0] NCCL INFO Channel 00/0 : 0[7] -> 1[4] [send] via NET/FuseLink/0/GDRDMA
+e01-cn-v8n4s5sfd01:2637:2668 [1] NCCL INFO channel id 1 listen comm 0x7fe620009ef0 dev 0
+e01-cn-v8n4s5sfd01:2637:2665 [1] NCCL INFO Channel 00/0 : 0[7] -> 1[4] [receive] via NET/FuseLink/0/GDRDMA
+e01-cn-v8n4s5sfd01:2637:2665 [1] NCCL INFO Channel 00/0 : 1[4] -> 2[0] [send] via NET/FuseLink/0/GDRDMA
+e01-cn-v8n4s5sfd01:2637:2667 [0] NCCL INFO NET/FuseLink : set up send channel 1 nicdev 0
+e01-cn-v8n4s5sfd01:2637:2667 [0] NCCL INFO init send comm, dev 0
+e01-cn-yb84rbk1807:17834:17864 [1] NCCL INFO NET/FuseLink : set up send channel 0 nicdev 0
+e01-cn-yb84rbk1807:17834:17864 [1] NCCL INFO init send comm, dev 0
+e01-cn-v8n4s5sfd01:2637:2668 [1] NCCL INFO NET/FuseLink : set up send channel 1 nicdev 0
+e01-cn-v8n4s5sfd01:2637:2668 [1] NCCL INFO init send comm, dev 0
+e01-cn-yb84rbk1807:17834:17865 [0] NCCL INFO NET/FuseLink : set up send channel 0 nicdev 0
+e01-cn-yb84rbk1807:17834:17865 [0] NCCL INFO init send comm, dev 0
+
+e01-cn-yb84rbk1807:17834:17864 [1] nccl/src/misc/ibvwrap.cc:202 NCCL WARN Call to ibv_create_qp failed with error No such file or directory
+e01-cn-yb84rbk1807:17834:17864 [1] NCCL INFO src/plugin.cc:690 -> 2
+e01-cn-yb84rbk1807:17834:17864 [1] NCCL INFO src/plugin.cc:851 -> 2
+e01-cn-yb84rbk1807:17834:17864 [1] NCCL INFO transport/net.cc:677 -> 2
+
+e01-cn-v8n4s5sfd01:2637:2667 [0] nccl/src/misc/ibvwrap.cc:202 NCCL WARN Call to ibv_create_qp failed with error No such file or directory
+e01-cn-v8n4s5sfd01:2637:2667 [0] NCCL INFO src/plugin.cc:690 -> 2
+e01-cn-v8n4s5sfd01:2637:2667 [0] NCCL INFO src/plugin.cc:851 -> 2
+e01-cn-v8n4s5sfd01:2637:2667 [0] NCCL INFO transport/net.cc:677 -> 2
+e01-cn-yb84rbk1807:17834:17861 [1] NCCL INFO transport/net.cc:304 -> 2
+e01-cn-yb84rbk1807:17834:17861 [1] NCCL INFO transport.cc:165 -> 2
+e01-cn-yb84rbk1807:17834:17861 [1] NCCL INFO init.cc:1111 -> 2
+e01-cn-yb84rbk1807:17834:17861 [1] NCCL INFO init.cc:1390 -> 2
+e01-cn-yb84rbk1807:17834:17861 [1] NCCL INFO group.cc:64 -> 2 [Async thread]
+e01-cn-v8n4s5sfd01:2637:2664 [0] NCCL INFO transport/net.cc:304 -> 2
+e01-cn-v8n4s5sfd01:2637:2664 [0] NCCL INFO transport.cc:165 -> 2
+e01-cn-v8n4s5sfd01:2637:2664 [0] NCCL INFO init.cc:1111 -> 2
+e01-cn-v8n4s5sfd01:2637:2664 [0] NCCL INFO init.cc:1390 -> 2
+e01-cn-v8n4s5sfd01:2637:2664 [0] NCCL INFO group.cc:64 -> 2 [Async thread]
+e01-cn-yb84rbk1807:17834:17864 [1] NCCL INFO proxy.cc:1393 -> 3
+
+e01-cn-yb84rbk1807:17834:17864 [1] proxy.cc:1535 NCCL WARN [Proxy Service 3] Failed to execute operation Connect from rank 3, retcode 3
+e01-cn-v8n4s5sfd01:2637:2665 [1] NCCL INFO misc/socket.cc:47 -> 3
+e01-cn-v8n4s5sfd01:2637:2665 [1] NCCL INFO misc/socket.cc:750 -> 3
+
+e01-cn-v8n4s5sfd01:2637:2665 [1] proxy.cc:1150 NCCL WARN Socket recv failed while polling for opId=0x7fe64d821bf0
+e01-cn-v8n4s5sfd01:2637:2665 [1] NCCL INFO transport/net.cc:399 -> 3
+e01-cn-v8n4s5sfd01:2637:2665 [1] NCCL INFO transport.cc:183 -> 3
+e01-cn-v8n4s5sfd01:2637:2667 [0] NCCL INFO proxy.cc:1393 -> 3
+
+e01-cn-v8n4s5sfd01:2637:2667 [0] proxy.cc:1535 NCCL WARN [Proxy Service 0] Failed to execute operation Connect from rank 0, retcode 3
+e01-cn-v8n4s5sfd01:2637:2665 [1] NCCL INFO init.cc:1111 -> 3
+e01-cn-v8n4s5sfd01:2637:2665 [1] NCCL INFO init.cc:1390 -> 3
+e01-cn-v8n4s5sfd01:2637:2665 [1] NCCL INFO group.cc:64 -> 3 [Async thread]
+e01-cn-yb84rbk1807:17834:17860 [0] NCCL INFO misc/socket.cc:47 -> 3
+e01-cn-yb84rbk1807:17834:17860 [0] NCCL INFO misc/socket.cc:750 -> 3
+
+e01-cn-yb84rbk1807:17834:17860 [0] proxy.cc:1150 NCCL WARN Socket recv failed while polling for opId=0x7fb12b717c58
+e01-cn-yb84rbk1807:17834:17860 [0] NCCL INFO transport/net.cc:304 -> 3
+e01-cn-yb84rbk1807:17834:17860 [0] NCCL INFO transport.cc:165 -> 3
+e01-cn-yb84rbk1807:17834:17860 [0] NCCL INFO init.cc:1111 -> 3
+e01-cn-yb84rbk1807:17834:17860 [0] NCCL INFO init.cc:1390 -> 3
+e01-cn-yb84rbk1807:17834:17860 [0] NCCL INFO group.cc:64 -> 3 [Async thread]
+e01-cn-v8n4s5sfd01:2637:2637 [1] NCCL INFO group.cc:418 -> 2
+e01-cn-v8n4s5sfd01:2637:2637 [1] NCCL INFO group.cc:95 -> 2
+e01-cn-v8n4s5sfd01: Test NCCL failure common.cu:236 'unhandled system error (run with NCCL_DEBUG=INFO for details) / '
+ .. e01-cn-v8n4s5sfd01 pid 2637: Test failure common.cu:1712
+ .. e01-cn-v8n4s5sfd01 pid 2637: Test failure common.cu:1545
+e01-cn-yb84rbk1807:17834:17865 [0] NCCL INFO NCCL_IB_GID_INDEX set by environment to 3.
+e01-cn-v8n4s5sfd01:2637:2668 [1] NCCL INFO NCCL_IB_GID_INDEX set by environment to 3.
+e01-cn-yb84rbk1807:17834:17834 [1] NCCL INFO group.cc:418 -> 2
+e01-cn-yb84rbk1807:17834:17834 [1] NCCL INFO group.cc:95 -> 2
+e01-cn-yb84rbk1807:17834:17865 [0] NCCL INFO proxy.cc:1393 -> 3
+e01-cn-yb84rbk1807: Test NCCL failure common.cu:236 'unhandled system error (run with NCCL_DEBUG=INFO for details) / '
+ .. e01-cn-yb84rbk1807 pid 17834: Test failure common.cu:1712
+
+e01-cn-yb84rbk1807:17834:17865 [0] proxy.cc:1535 NCCL WARN [Proxy Service 2] Failed to execute operation Connect from rank 2, retcode 3
+ .. e01-cn-yb84rbk1807 pid 17834: Test failure common.cu:1545
+e01-cn-v8n4s5sfd01:2637:2668 [0] NCCL INFO proxy.cc:1393 -> 3
+
+e01-cn-v8n4s5sfd01:2637:2668 [0] proxy.cc:1535 NCCL WARN [Proxy Service 1] Failed to execute operation Connect from rank 1, retcode 3
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[11844,1],0]
+  Exit code:    3
+--------------------------------------------------------------------------

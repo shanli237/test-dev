@@ -1,0 +1,694 @@
+# nccl-tests version 2.21.1 (afd59ab) nccl-headers=21904 nccl-library=21904
+# Collective test starting: all_reduce_perf
+# nThread 1 nGpus 2 minBytes 8 maxBytes 65536 step: 2(factor) warmup iters: 1 iters: 3 agg iters: 1 validation: 1 graph: 0 unalign: 0
+#
+# Using devices
+#  Rank  0 Group  0 Pid   2123 on e01-cn-v8n4s5sfd01 device  0 [0000:bb:00] NVIDIA L20D
+#  Rank  1 Group  0 Pid   2123 on e01-cn-v8n4s5sfd01 device  1 [0000:db:00] NVIDIA L20D
+#  Rank  2 Group  0 Pid  15085 on e01-cn-yb84rbk1807 device  0 [0000:bb:00] NVIDIA L20D
+#  Rank  3 Group  0 Pid  15085 on e01-cn-yb84rbk1807 device  1 [0000:db:00] NVIDIA L20D
+e01-cn-v8n4s5sfd01:2123:2123 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to =eth0
+e01-cn-v8n4s5sfd01:2123:2123 [0] NCCL INFO Bootstrap : Using eth0:11.163.39.114<0>
+e01-cn-v8n4s5sfd01:2123:2123 [0] NCCL INFO Plugin name set by env to libnccl-net-fuselink.so
+e01-cn-v8n4s5sfd01:2123:2123 [0] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v7 symbol.
+e01-cn-v8n4s5sfd01:2123:2123 [0] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin symbol (>= v5). ncclCollNetPlugin symbols v4 and lower are not supported.
+e01-cn-v8n4s5sfd01:2123:2123 [0] NCCL INFO cudaDriverVersion 13000
+NCCL version 2.19.4+cuda12.2
+e01-cn-yb84rbk1807:15085:15085 [0] NCCL INFO cudaDriverVersion 13000
+e01-cn-yb84rbk1807:15085:15085 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to =eth0
+e01-cn-yb84rbk1807:15085:15085 [0] NCCL INFO Bootstrap : Using eth0:11.163.39.110<0>
+e01-cn-yb84rbk1807:15085:15085 [0] NCCL INFO Plugin name set by env to libnccl-net-fuselink.so
+e01-cn-yb84rbk1807:15085:15085 [0] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v7 symbol.
+e01-cn-yb84rbk1807:15085:15085 [0] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin symbol (>= v5). ncclCollNetPlugin symbols v4 and lower are not supported.
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to =eth0
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO NCCL_IB_HCA set to =mlx5_bond_5,mlx5_bond_6
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO NET/FuseLink : Using [0]mlx5_bond_5:1/RoCE [1]mlx5_bond_6:1/RoCE ; OOB eth0:11.163.39.114<0>
+
+e01-cn-v8n4s5sfd01:2123:2138 [0] src/plugin.cc:316 NCCL WARN 
+
+=======================
+NET/FuseLink: init done
+
+FuseLink is in very early stage of development, use in caution.
+=======================
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO NET/FuseLink : channel 0 nic 0
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO NET/FuseLink : channel 1 nic 1
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO NET/FuseLink : channel 2 nic 0
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO NET/FuseLink : channel 3 nic 1
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO NET/FuseLink : channel 4 nic -1
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO NET/FuseLink : channel 5 nic -1
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO NET/FuseLink : channel 6 nic -1
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO NET/FuseLink : channel 7 nic -1
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO NET/FuseLink : channel 8 nic -1
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO NET/FuseLink : channel 9 nic -1
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO NET/FuseLink : channel 10 nic -1
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO NET/FuseLink : channel 11 nic -1
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO NET/FuseLink : channel 12 nic -1
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO NET/FuseLink : channel 13 nic -1
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO NET/FuseLink : channel 14 nic -1
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO NET/FuseLink : channel 15 nic -1
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO Using non-device net plugin version 0
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO Using network FuseLink
+e01-cn-v8n4s5sfd01:2123:2139 [1] NCCL INFO Using non-device net plugin version 0
+e01-cn-v8n4s5sfd01:2123:2139 [1] NCCL INFO Using network FuseLink
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO NCCL_DMABUF_ENABLE set by environment to 0.
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to =eth0
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO NCCL_IB_HCA set to =mlx5_bond_5,mlx5_bond_6
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO NET/FuseLink : Using [0]mlx5_bond_5:1/RoCE [1]mlx5_bond_6:1/RoCE ; OOB eth0:11.163.39.110<0>
+
+e01-cn-yb84rbk1807:15085:15097 [0] src/plugin.cc:316 NCCL WARN 
+
+=======================
+NET/FuseLink: init done
+
+FuseLink is in very early stage of development, use in caution.
+=======================
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO NET/FuseLink : channel 0 nic 0
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO NET/FuseLink : channel 1 nic 1
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO NET/FuseLink : channel 2 nic 0
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO NET/FuseLink : channel 3 nic 1
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO NET/FuseLink : channel 4 nic -1
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO NET/FuseLink : channel 5 nic -1
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO NET/FuseLink : channel 6 nic -1
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO NET/FuseLink : channel 7 nic -1
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO NET/FuseLink : channel 8 nic -1
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO NET/FuseLink : channel 9 nic -1
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO NET/FuseLink : channel 10 nic -1
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO NET/FuseLink : channel 11 nic -1
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO NET/FuseLink : channel 12 nic -1
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO NET/FuseLink : channel 13 nic -1
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO NET/FuseLink : channel 14 nic -1
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO NET/FuseLink : channel 15 nic -1
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO Using non-device net plugin version 0
+e01-cn-yb84rbk1807:15085:15098 [1] NCCL INFO Using non-device net plugin version 0
+e01-cn-yb84rbk1807:15085:15098 [1] NCCL INFO Using network FuseLink
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO Using network FuseLink
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO NCCL_DMABUF_ENABLE set by environment to 0.
+e01-cn-yb84rbk1807:15085:15098 [1] NCCL INFO comm 0x56357e4b4010 rank 3 nranks 4 cudaDev 1 nvmlDev 1 busId db000 commId 0x3b1369a9e8e0ca83 - Init START
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO comm 0x561c8ab7e250 rank 0 nranks 4 cudaDev 0 nvmlDev 0 busId bb000 commId 0x3b1369a9e8e0ca83 - Init START
+e01-cn-v8n4s5sfd01:2123:2139 [1] NCCL INFO comm 0x561c8a9d4160 rank 1 nranks 4 cudaDev 1 nvmlDev 1 busId db000 commId 0x3b1369a9e8e0ca83 - Init START
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO comm 0x56357e65e100 rank 2 nranks 4 cudaDev 0 nvmlDev 0 busId bb000 commId 0x3b1369a9e8e0ca83 - Init START
+e01-cn-yb84rbk1807:15085:15098 [1] NCCL INFO NCCL_CUMEM_ENABLE set by environment to 1.
+e01-cn-yb84rbk1807:15085:15098 [1] NCCL INFO NCCL_NET_GDR_LEVEL set by environment to SYS
+e01-cn-yb84rbk1807:15085:15098 [1] NCCL INFO Setting affinity for GPU 1 to ffffffff,ffffffff,00000000,00000000,ffffffff,ffffffff,00000000,00000000
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO Setting affinity for GPU 0 to ffffffff,ffffffff,00000000,00000000,ffffffff,ffffffff,00000000,00000000
+e01-cn-v8n4s5sfd01:2123:2139 [1] NCCL INFO NCCL_CUMEM_ENABLE set by environment to 1.
+e01-cn-v8n4s5sfd01:2123:2139 [1] NCCL INFO NCCL_NET_GDR_LEVEL set by environment to SYS
+e01-cn-v8n4s5sfd01:2123:2139 [1] NCCL INFO Setting affinity for GPU 1 to ffffffff,ffffffff,00000000,00000000,ffffffff,ffffffff,00000000,00000000
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO Setting affinity for GPU 0 to ffffffff,ffffffff,00000000,00000000,ffffffff,ffffffff,00000000,00000000
+e01-cn-v8n4s5sfd01:2123:2139 [1] NCCL INFO NCCL_MAX_NCHANNELS set by environment to 4.
+e01-cn-v8n4s5sfd01:2123:2139 [1] NCCL INFO NCCL_MIN_NCHANNELS set by environment to 4.
+e01-cn-v8n4s5sfd01:2123:2139 [1] NCCL INFO Trees [0] -1/-1/-1->1->0 [1] 0/3/-1->1->-1 [2] -1/-1/-1->1->0 [3] 0/3/-1->1->-1
+e01-cn-v8n4s5sfd01:2123:2139 [1] NCCL INFO P2P Chunksize set to 131072
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO Channel 00/04 :    0   1   2   3
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO Channel 01/04 :    0   3   2   1
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO Channel 02/04 :    0   1   2   3
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO Channel 03/04 :    0   3   2   1
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO Trees [0] 1/2/-1->0->-1 [1] -1/-1/-1->0->1 [2] 1/2/-1->0->-1 [3] -1/-1/-1->0->1
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO P2P Chunksize set to 131072
+e01-cn-yb84rbk1807:15085:15098 [1] NCCL INFO NCCL_MAX_NCHANNELS set by environment to 4.
+e01-cn-yb84rbk1807:15085:15098 [1] NCCL INFO NCCL_MIN_NCHANNELS set by environment to 4.
+e01-cn-yb84rbk1807:15085:15098 [1] NCCL INFO Trees [0] -1/-1/-1->3->2 [1] 2/-1/-1->3->1 [2] -1/-1/-1->3->2 [3] 2/-1/-1->3->1
+e01-cn-yb84rbk1807:15085:15098 [1] NCCL INFO P2P Chunksize set to 131072
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO Trees [0] 3/-1/-1->2->0 [1] -1/-1/-1->2->3 [2] 3/-1/-1->2->0 [3] -1/-1/-1->2->3
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO P2P Chunksize set to 131072
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO NCCL_FUSELINK_NCHANNELS set by environment to 4.
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO channel id 0 listen comm 0x7fa9f4009ef0 dev 0
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO Channel 00/0 : 3[1] -> 0[0] [receive] via NET/FuseLink/0/GDRDMA
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO channel id 1 listen comm 0x7fa9f40132a0 dev 1
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO Channel 02/0 : 3[1] -> 0[0] [receive] via NET/FuseLink/0/GDRDMA
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO Channel 00/0 : 0[0] -> 1[1] via P2P/direct pointer
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO Channel 02/0 : 0[0] -> 1[1] via P2P/direct pointer
+e01-cn-v8n4s5sfd01:2123:2139 [1] NCCL INFO Channel 00/0 : 1[1] -> 2[0] [send] via NET/FuseLink/0(0)/GDRDMA
+e01-cn-v8n4s5sfd01:2123:2139 [1] NCCL INFO Channel 02/0 : 1[1] -> 2[0] [send] via NET/FuseLink/0(0)/GDRDMA
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO NCCL_FUSELINK_NCHANNELS set by environment to 4.
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO channel id 0 listen comm 0x7fc3ec009ef0 dev 0
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO Channel 00/0 : 1[1] -> 2[0] [receive] via NET/FuseLink/0/GDRDMA
+e01-cn-yb84rbk1807:15085:15098 [1] NCCL INFO Channel 00/0 : 3[1] -> 0[0] [send] via NET/FuseLink/0(2)/GDRDMA
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO channel id 1 listen comm 0x7fc3ec018590 dev 1
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO Channel 02/0 : 1[1] -> 2[0] [receive] via NET/FuseLink/0/GDRDMA
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO Channel 00/0 : 2[0] -> 3[1] via P2P/direct pointer
+e01-cn-yb84rbk1807:15085:15098 [1] NCCL INFO Channel 02/0 : 3[1] -> 0[0] [send] via NET/FuseLink/0(2)/GDRDMA
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO Channel 02/0 : 2[0] -> 3[1] via P2P/direct pointer
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO channel id 2 listen comm 0x7fc3f400d220 dev 0
+e01-cn-yb84rbk1807:15085:15098 [1] NCCL INFO Channel 01/0 : 0[0] -> 3[1] [receive] via NET/FuseLink/1/GDRDMA
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO Channel 01/0 : 2[0] -> 1[1] [send] via NET/FuseLink/1(3)/GDRDMA
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO channel id 3 listen comm 0x7fc3f401b8c0 dev 1
+e01-cn-yb84rbk1807:15085:15098 [1] NCCL INFO Channel 03/0 : 0[0] -> 3[1] [receive] via NET/FuseLink/1/GDRDMA
+e01-cn-yb84rbk1807:15085:15098 [1] NCCL INFO Channel 01/0 : 3[1] -> 2[0] via P2P/direct pointer
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO Channel 03/0 : 2[0] -> 1[1] [send] via NET/FuseLink/1(3)/GDRDMA
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO channel id 2 listen comm 0x7faa8000cfc0 dev 0
+e01-cn-v8n4s5sfd01:2123:2139 [1] NCCL INFO Channel 01/0 : 2[0] -> 1[1] [receive] via NET/FuseLink/1/GDRDMA
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO Channel 01/0 : 0[0] -> 3[1] [send] via NET/FuseLink/1(1)/GDRDMA
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO channel id 3 listen comm 0x7faa8001b660 dev 1
+e01-cn-v8n4s5sfd01:2123:2139 [1] NCCL INFO Channel 03/0 : 2[0] -> 1[1] [receive] via NET/FuseLink/1/GDRDMA
+e01-cn-v8n4s5sfd01:2123:2139 [1] NCCL INFO Channel 01/0 : 1[1] -> 0[0] via P2P/direct pointer
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO Channel 03/0 : 0[0] -> 3[1] [send] via NET/FuseLink/1(1)/GDRDMA
+e01-cn-yb84rbk1807:15085:15098 [1] NCCL INFO Channel 03/0 : 3[1] -> 2[0] via P2P/direct pointer
+e01-cn-v8n4s5sfd01:2123:2139 [1] NCCL INFO Channel 03/0 : 1[1] -> 0[0] via P2P/direct pointer
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO NET/FuseLink : set up send channel 0 nicdev 0
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO init send comm, dev 0
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO NET/FuseLink : set up send channel 0 nicdev 0
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO init send comm, dev 0
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO NET/FuseLink : set up send channel 2 nicdev 0
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO init send comm, dev 0
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO NET/FuseLink : set up send channel 0 nicdev 1
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO init send comm, dev 1
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO NET/FuseLink : set up send channel 0 nicdev 1
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO init send comm, dev 1
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO NET/FuseLink : set up send channel 2 nicdev 1
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO init send comm, dev 1
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO NET/FuseLink : set up recv channel 0 nicdev 0
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO init recv comm, dev 0
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO NET/FuseLink : set up send channel 3 nicdev 0
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO init send comm, dev 0
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO NET/FuseLink : set up send channel 3 nicdev 1
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO init send comm, dev 1
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO NET/FuseLink : set up recv channel 0 nicdev 1
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO init recv comm, dev 1
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO recv Control comm dev 0
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO NET/FuseLink : set up send channel 1 nicdev 0
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO init send comm, dev 0
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO NET/FuseLink : set up send channel 1 nicdev 1
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO init send comm, dev 1
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO recv comm 0x7fa9f40ed000
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO send Control comm dev 0
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO channel id 0 sendcomm 0x7fc3ec029000 control at 0x7fc3ec01d910 dev 0
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO lock on dev 0
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO reg addr 0x406e00000 dev 0 size 10485760 pd 0x7faa14248190 flags 7
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO dev 0 regAddr 406e00000 size 10485760 lkey 1045d rkey 1045d start_addr 0x406e00000
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO lock on dev 1
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO reg addr 0x408000000 dev 1 size 10485760 pd 0x7faa142481f0 flags 7
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO dev 1 regAddr 408000000 size 10485760 lkey 11914 rkey 11914 start_addr 0x408000000
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO lock on dev 0
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO reg addr 0x7fc447200000 dev 0 size 528384 pd 0x7fc423eb3bd0 flags 7
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO dev 0 regAddr 7fc447200000 size 528384 lkey 17d793 rkey 17d793 start_addr 0x7fc447200000
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO NET/FuseLink : set up recv channel 2 nicdev 0
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO init recv comm, dev 0
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO NET/FuseLink : set up recv channel 2 nicdev 1
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO init recv comm, dev 1
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO recv Control comm dev 0
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO NET/FuseLink : set up recv channel 3 nicdev 0
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO init recv comm, dev 0
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO NET/FuseLink : set up recv channel 3 nicdev 1
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO init recv comm, dev 1
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO send Control comm dev 0
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO channel id 2 sendcomm 0x7faa80029000 control at 0x7faa80000b70 dev 0
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO lock on dev 0
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO reg addr 0x7faa41400000 dev 0 size 528384 pd 0x7faa14248190 flags 7
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO recv Control comm dev 1
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO dev 0 regAddr 7faa41400000 size 528384 lkey 212d0c rkey 212d0c start_addr 0x7faa41400000
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO recv comm 0x7fc3f4029000
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO lock on dev 0
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO reg addr 0x409400000 dev 0 size 10485760 pd 0x7faa14248190 flags 7
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO dev 0 regAddr 409400000 size 10485760 lkey 11d5e rkey 11d5e start_addr 0x409400000
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO lock on dev 1
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO reg addr 0x40a000000 dev 1 size 10485760 pd 0x7faa142481f0 flags 7
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO dev 1 regAddr 40a000000 size 10485760 lkey 12515 rkey 12515 start_addr 0x40a000000
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO send Control comm dev 1
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO channel id 3 sendcomm 0x7faa80108000 control at 0x7faa800d8aa0 dev 1
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO lock on dev 1
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO reg addr 0x7faa41482000 dev 1 size 528384 pd 0x7faa142481f0 flags 7
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO dev 1 regAddr 7faa41482000 size 528384 lkey 220ea6 rkey 220ea6 start_addr 0x7faa41482000
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO lock on dev 0
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO reg addr 0x40b400000 dev 0 size 10485760 pd 0x7faa14248190 flags 7
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO dev 0 regAddr 40b400000 size 10485760 lkey 1315f rkey 1315f start_addr 0x40b400000
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO lock on dev 1
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO reg addr 0x40c000000 dev 1 size 10485760 pd 0x7faa142481f0 flags 7
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO dev 1 regAddr 40c000000 size 10485760 lkey 13016 rkey 13016 start_addr 0x40c000000
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO lock on dev 0
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO reg addr 0x408000000 dev 0 size 10485760 pd 0x7fc423eb3bd0 flags 7
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO dev 0 regAddr 408000000 size 10485760 lkey b94e rkey b94e start_addr 0x408000000
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO lock on dev 1
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO reg addr 0x409400000 dev 1 size 10485760 pd 0x7fc423eb3c30 flags 7
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO dev 1 regAddr 409400000 size 10485760 lkey b00f rkey b00f start_addr 0x409400000
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO lock on dev 0
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO reg addr 0x40a000000 dev 0 size 10485760 pd 0x7fc423eb3bd0 flags 7
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO dev 0 regAddr 40a000000 size 10485760 lkey c24f rkey c24f start_addr 0x40a000000
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO lock on dev 1
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO reg addr 0x40aa00000 dev 1 size 10485760 pd 0x7fc423eb3c30 flags 7
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO dev 1 regAddr 40aa00000 size 10485760 lkey b210 rkey b210 start_addr 0x40aa00000
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO recv comm 0x7fc3f40d7000
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO NET/FuseLink : set up recv channel 0 nicdev 0
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO init recv comm, dev 0
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO lock on dev 0
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO reg addr 0x40c000000 dev 0 size 10485760 pd 0x7fc423eb3bd0 flags 7
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO dev 0 regAddr 40c000000 size 10485760 lkey d750 rkey d750 start_addr 0x40c000000
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO lock on dev 1
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO reg addr 0x40ca00000 dev 1 size 10485760 pd 0x7fc423eb3c30 flags 7
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO dev 1 regAddr 40ca00000 size 10485760 lkey c411 rkey c411 start_addr 0x40ca00000
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO NET/FuseLink : set up send channel 2 nicdev 0
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO init send comm, dev 0
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO NET/FuseLink : set up recv channel 0 nicdev 1
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO init recv comm, dev 1
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO NET/FuseLink : set up send channel 2 nicdev 1
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO init send comm, dev 1
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO NET/FuseLink : set up recv channel 2 nicdev 0
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO init recv comm, dev 0
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO NET/FuseLink : set up send channel 3 nicdev 0
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO init send comm, dev 0
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO recv Control comm dev 0
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO NET/FuseLink : set up send channel 3 nicdev 1
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO init send comm, dev 1
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO NET/FuseLink : set up send channel 1 nicdev 0
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO init send comm, dev 0
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO NET/FuseLink : set up send channel 1 nicdev 1
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO init send comm, dev 1
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO NET/FuseLink : set up recv channel 1 nicdev 0
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO init recv comm, dev 0
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO NET/FuseLink : set up recv channel 2 nicdev 1
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO init recv comm, dev 1
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO send Control comm dev 0
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO channel id 0 sendcomm 0x7fa9f4029000 control at 0x7fa9f4013330 dev 0
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO lock on dev 0
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO reg addr 0x7faa41202000 dev 0 size 528384 pd 0x7faa14248190 flags 7
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO dev 0 regAddr 7faa41202000 size 528384 lkey 220eed rkey 220eed start_addr 0x7faa41202000
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO lock on dev 0
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO reg addr 0x40ea00000 dev 0 size 10485760 pd 0x7faa14248190 flags 7
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO NET/FuseLink : set up recv channel 1 nicdev 1
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO init recv comm, dev 1
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO dev 0 regAddr 40ea00000 size 10485760 lkey 13f60 rkey 13f60 start_addr 0x40ea00000
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO lock on dev 1
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO reg addr 0x40f400000 dev 1 size 10485760 pd 0x7faa142481f0 flags 7
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO dev 1 regAddr 40f400000 size 10485760 lkey 13a17 rkey 13a17 start_addr 0x40f400000
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO NET/FuseLink : set up recv channel 1 nicdev 0
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO recv Control comm dev 0
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO init recv comm, dev 0
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO NET/FuseLink : set up recv channel 3 nicdev 0
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO init recv comm, dev 0
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO recv Control comm dev 1
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO recv comm 0x7fc3ec0e4000
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO NET/FuseLink : set up recv channel 1 nicdev 1
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO init recv comm, dev 1
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO send Control comm dev 0
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO channel id 2 sendcomm 0x7fc3f417e000 control at 0x7fc3f4024e20 dev 0
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO NET/FuseLink : set up recv channel 3 nicdev 1
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO init recv comm, dev 1
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO recv Control comm dev 1
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO recv Control comm dev 1
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO recv comm 0x7faa800d9000
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO lock on dev 0
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO reg addr 0x40e000000 dev 0 size 10485760 pd 0x7fc423eb3bd0 flags 7
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO dev 0 regAddr 40e000000 size 10485760 lkey e551 rkey e551 start_addr 0x40e000000
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO lock on dev 1
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO reg addr 0x40f400000 dev 1 size 10485760 pd 0x7fc423eb3c30 flags 7
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO lock on dev 0
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO reg addr 0x410a00000 dev 0 size 10485760 pd 0x7faa14248190 flags 7
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO dev 0 regAddr 410a00000 size 10485760 lkey 14b61 rkey 14b61 start_addr 0x410a00000
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO lock on dev 1
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO reg addr 0x411400000 dev 1 size 10485760 pd 0x7faa142481f0 flags 7
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO send Control comm dev 1
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO channel id 1 sendcomm 0x7fa9f4199000 control at 0x7fa9f4198b00 dev 1
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO dev 1 regAddr 411400000 size 10485760 lkey 14918 rkey 14918 start_addr 0x411400000
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO dev 1 regAddr 40f400000 size 10485760 lkey cc12 rkey cc12 start_addr 0x40f400000
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO lock on dev 0
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO reg addr 0x7fc447404000 dev 0 size 528384 pd 0x7fc423eb3bd0 flags 7
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO lock on dev 1
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO reg addr 0x7faa41284000 dev 1 size 528384 pd 0x7faa142481f0 flags 7
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO dev 0 regAddr 7fc447404000 size 528384 lkey 17bb79 rkey 17bb79 start_addr 0x7fc447404000
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO dev 1 regAddr 7faa41284000 size 528384 lkey 212ac2 rkey 212ac2 start_addr 0x7faa41284000
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO lock on dev 0
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO reg addr 0x410000000 dev 0 size 10485760 pd 0x7fc423eb3bd0 flags 7
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO lock on dev 0
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO reg addr 0x412a00000 dev 0 size 10485760 pd 0x7faa14248190 flags 7
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO dev 0 regAddr 412a00000 size 10485760 lkey 15a62 rkey 15a62 start_addr 0x412a00000
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO lock on dev 1
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO reg addr 0x413400000 dev 1 size 10485760 pd 0x7faa142481f0 flags 7
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO dev 0 regAddr 410000000 size 10485760 lkey f152 rkey f152 start_addr 0x410000000
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO lock on dev 1
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO reg addr 0x410a00000 dev 1 size 10485760 pd 0x7fc423eb3c30 flags 7
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO dev 1 regAddr 413400000 size 10485760 lkey 15719 rkey 15719 start_addr 0x413400000
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO dev 1 regAddr 410a00000 size 10485760 lkey d813 rkey d813 start_addr 0x410a00000
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO recv comm 0x7fc3ec242000
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO lock on dev 0
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO reg addr 0x412000000 dev 0 size 10485760 pd 0x7fc423eb3bd0 flags 7
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO recv comm 0x7faa801b8000
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO send Control comm dev 1
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO channel id 3 sendcomm 0x7fc3f4224000 control at 0x7fc3f41bcf30 dev 1
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO lock on dev 0
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO reg addr 0x416000000 dev 0 size 10485760 pd 0x7faa14248190 flags 7
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO dev 0 regAddr 416000000 size 10485760 lkey 16663 rkey 16663 start_addr 0x416000000
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO lock on dev 1
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO reg addr 0x416a00000 dev 1 size 10485760 pd 0x7faa142481f0 flags 7
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO dev 1 regAddr 416a00000 size 10485760 lkey 16d1a rkey 16d1a start_addr 0x416a00000
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO dev 0 regAddr 412000000 size 10485760 lkey ff53 rkey ff53 start_addr 0x412000000
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO lock on dev 1
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO reg addr 0x412a00000 dev 1 size 10485760 pd 0x7fc423eb3c30 flags 7
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO dev 1 regAddr 412a00000 size 10485760 lkey e714 rkey e714 start_addr 0x412a00000
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO lock on dev 1
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO reg addr 0x7fc447486000 dev 1 size 528384 pd 0x7fc423eb3c30 flags 7
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO dev 1 regAddr 7fc447486000 size 528384 lkey 178644 rkey 178644 start_addr 0x7fc447486000
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO lock on dev 0
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO reg addr 0x414000000 dev 0 size 10485760 pd 0x7fc423eb3bd0 flags 7
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO recv comm 0x7fa9f4249000
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO send Control comm dev 1
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO channel id 1 sendcomm 0x7fc3ec192000 control at 0x7fc3ec1688f0 dev 1
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO lock on dev 0
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO reg addr 0x418000000 dev 0 size 10485760 pd 0x7faa14248190 flags 7
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO dev 0 regAddr 418000000 size 10485760 lkey 17364 rkey 17364 start_addr 0x418000000
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO lock on dev 1
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO reg addr 0x418a00000 dev 1 size 10485760 pd 0x7faa142481f0 flags 7
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO dev 1 regAddr 418a00000 size 10485760 lkey 17c1b rkey 17c1b start_addr 0x418a00000
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO dev 0 regAddr 414000000 size 10485760 lkey 10e54 rkey 10e54 start_addr 0x414000000
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO lock on dev 1
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO reg addr 0x414a00000 dev 1 size 10485760 pd 0x7fc423eb3c30 flags 7
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO dev 1 regAddr 414a00000 size 10485760 lkey f715 rkey f715 start_addr 0x414a00000
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO lock on dev 1
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO reg addr 0x7fc447286000 dev 1 size 528384 pd 0x7fc423eb3c30 flags 7
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO dev 1 regAddr 7fc447286000 size 528384 lkey 176524 rkey 176524 start_addr 0x7fc447286000
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO lock on dev 0
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO reg addr 0x416000000 dev 0 size 10485760 pd 0x7fc423eb3bd0 flags 7
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO dev 0 regAddr 416000000 size 10485760 lkey 13f55 rkey 13f55 start_addr 0x416000000
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO lock on dev 1
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO reg addr 0x416a00000 dev 1 size 10485760 pd 0x7fc423eb3c30 flags 7
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO dev 1 regAddr 416a00000 size 10485760 lkey 10216 rkey 10216 start_addr 0x416a00000
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO Connected all rings
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO Channel 01/0 : 0[0] -> 1[1] via P2P/direct pointer
+e01-cn-v8n4s5sfd01:2123:2139 [1] NCCL INFO Connected all rings
+e01-cn-yb84rbk1807:15085:15098 [1] NCCL INFO Connected all rings
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO Channel 03/0 : 0[0] -> 1[1] via P2P/direct pointer
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO Connected all rings
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO Channel 01/0 : 2[0] -> 3[1] via P2P/direct pointer
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO channel id 4 listen comm 0x7fa9f40e62f0 dev 0
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO channel id 5 listen comm 0x7faa800d8170 dev 1
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO Channel 00/0 : 2[0] -> 0[0] [receive] via NET/FuseLink/0/GDRDMA
+e01-cn-v8n4s5sfd01:2123:2139 [1] NCCL INFO Channel 01/0 : 3[1] -> 1[1] [receive] via NET/FuseLink/1/GDRDMA
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO channel id 6 listen comm 0x7fa9f40e6380 dev 0
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO Channel 02/0 : 2[0] -> 0[0] [receive] via NET/FuseLink/0/GDRDMA
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO channel id 7 listen comm 0x7faa80107130 dev 1
+e01-cn-v8n4s5sfd01:2123:2139 [1] NCCL INFO Channel 03/0 : 3[1] -> 1[1] [receive] via NET/FuseLink/1/GDRDMA
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO Channel 00/0 : 0[0] -> 2[0] [send] via NET/FuseLink/0/GDRDMA
+e01-cn-v8n4s5sfd01:2123:2139 [1] NCCL INFO Channel 01/0 : 1[1] -> 3[1] [send] via NET/FuseLink/1/GDRDMA
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO Channel 02/0 : 0[0] -> 2[0] [send] via NET/FuseLink/0/GDRDMA
+e01-cn-v8n4s5sfd01:2123:2139 [1] NCCL INFO Channel 03/0 : 1[1] -> 3[1] [send] via NET/FuseLink/1/GDRDMA
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO Channel 03/0 : 2[0] -> 3[1] via P2P/direct pointer
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO channel id 4 listen comm 0x7fc3f4106f50 dev 0
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO channel id 5 listen comm 0x7fc3ec028940 dev 1
+e01-cn-yb84rbk1807:15085:15098 [1] NCCL INFO Channel 01/0 : 1[1] -> 3[1] [receive] via NET/FuseLink/1/GDRDMA
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO Channel 00/0 : 0[0] -> 2[0] [receive] via NET/FuseLink/0/GDRDMA
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO channel id 6 listen comm 0x7fc3f40d6ea0 dev 0
+e01-cn-yb84rbk1807:15085:15098 [1] NCCL INFO Channel 03/0 : 1[1] -> 3[1] [receive] via NET/FuseLink/1/GDRDMA
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO channel id 7 listen comm 0x7fc3ec0289d0 dev 1
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO Channel 02/0 : 0[0] -> 2[0] [receive] via NET/FuseLink/0/GDRDMA
+e01-cn-yb84rbk1807:15085:15098 [1] NCCL INFO Channel 01/0 : 3[1] -> 1[1] [send] via NET/FuseLink/1/GDRDMA
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO Channel 00/0 : 2[0] -> 0[0] [send] via NET/FuseLink/0/GDRDMA
+e01-cn-yb84rbk1807:15085:15098 [1] NCCL INFO Channel 03/0 : 3[1] -> 1[1] [send] via NET/FuseLink/1/GDRDMA
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO Channel 02/0 : 2[0] -> 0[0] [send] via NET/FuseLink/0/GDRDMA
+e01-cn-yb84rbk1807:15085:15098 [1] NCCL INFO Channel 00/0 : 3[1] -> 2[0] via P2P/direct pointer
+e01-cn-v8n4s5sfd01:2123:2139 [1] NCCL INFO Channel 00/0 : 1[1] -> 0[0] via P2P/direct pointer
+e01-cn-yb84rbk1807:15085:15098 [1] NCCL INFO Channel 02/0 : 3[1] -> 2[0] via P2P/direct pointer
+e01-cn-v8n4s5sfd01:2123:2139 [1] NCCL INFO Channel 02/0 : 1[1] -> 0[0] via P2P/direct pointer
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO NET/FuseLink : set up send channel 4 nicdev 0
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO init send comm, dev 0
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO NET/FuseLink : set up send channel 5 nicdev 0
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO init send comm, dev 0
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO NET/FuseLink : set up send channel 5 nicdev 0
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO init send comm, dev 0
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO NET/FuseLink : set up send channel 4 nicdev 0
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO init send comm, dev 0
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO NET/FuseLink : set up send channel 5 nicdev 1
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO init send comm, dev 1
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO NET/FuseLink : set up send channel 4 nicdev 1
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO init send comm, dev 1
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO NET/FuseLink : set up send channel 5 nicdev 1
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO init send comm, dev 1
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO NET/FuseLink : set up send channel 4 nicdev 1
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO init send comm, dev 1
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO NET/FuseLink : set up send channel 7 nicdev 0
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO init send comm, dev 0
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO NET/FuseLink : set up send channel 6 nicdev 0
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO init send comm, dev 0
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO NET/FuseLink : set up recv channel 5 nicdev 0
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO NET/FuseLink : set up recv channel 4 nicdev 0
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO init recv comm, dev 0
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO init recv comm, dev 0
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO NET/FuseLink : set up send channel 7 nicdev 1
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO init send comm, dev 1
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO NET/FuseLink : set up send channel 6 nicdev 1
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO init send comm, dev 1
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO NET/FuseLink : set up recv channel 5 nicdev 0
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO NET/FuseLink : set up recv channel 4 nicdev 0
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO init recv comm, dev 0
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO init recv comm, dev 0
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO NET/FuseLink : set up recv channel 5 nicdev 1
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO init recv comm, dev 1
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO NET/FuseLink : set up recv channel 4 nicdev 1
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO init recv comm, dev 1
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO NET/FuseLink : set up recv channel 4 nicdev 1
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO recv Control comm dev 1
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO init recv comm, dev 1
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO NET/FuseLink : set up send channel 6 nicdev 0
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO init send comm, dev 0
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO recv Control comm dev 0
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO NET/FuseLink : set up recv channel 5 nicdev 1
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO init recv comm, dev 1
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO NET/FuseLink : set up send channel 7 nicdev 0
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO init send comm, dev 0
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO NET/FuseLink : set up send channel 6 nicdev 1
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO init send comm, dev 1
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO NET/FuseLink : set up send channel 7 nicdev 1
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO init send comm, dev 1
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO recv Control comm dev 0
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO NET/FuseLink : set up recv channel 7 nicdev 0
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO init recv comm, dev 0
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO NET/FuseLink : set up recv channel 6 nicdev 0
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO NET/FuseLink : set up recv channel 6 nicdev 0
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO init recv comm, dev 0
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO init recv comm, dev 0
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO recv Control comm dev 1
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO NET/FuseLink : set up recv channel 7 nicdev 0
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO init recv comm, dev 0
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO NET/FuseLink : set up recv channel 7 nicdev 1
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO init recv comm, dev 1
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO NET/FuseLink : set up recv channel 6 nicdev 1
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO init recv comm, dev 1
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO NET/FuseLink : set up recv channel 6 nicdev 1
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO init recv comm, dev 1
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO NET/FuseLink : set up recv channel 7 nicdev 1
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO init recv comm, dev 1
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO recv Control comm dev 1
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO recv Control comm dev 0
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO recv Control comm dev 0
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO recv Control comm dev 1
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO send Control comm dev 0
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO channel id 4 sendcomm 0x7faa802de000 control at 0x7faa801b14f0 dev 0
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO lock on dev 0
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO reg addr 0x7faa41508000 dev 0 size 528384 pd 0x7faa14248190 flags 7
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO dev 0 regAddr 7faa41508000 size 528384 lkey 21f0cc rkey 21f0cc start_addr 0x7faa41508000
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO send Control comm dev 1
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO channel id 5 sendcomm 0x7fa9f42ed000 control at 0x7fa9f42ecef0 dev 1
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO lock on dev 0
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO reg addr 0x41d400000 dev 0 size 10485760 pd 0x7faa14248190 flags 7
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO send Control comm dev 1
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO channel id 5 sendcomm 0x7fc3f42da000 control at 0x7fc3f4307d30 dev 1
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO dev 0 regAddr 41d400000 size 10485760 lkey 18165 rkey 18165 start_addr 0x41d400000
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO lock on dev 1
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO reg addr 0x41e000000 dev 1 size 10485760 pd 0x7faa142481f0 flags 7
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO dev 1 regAddr 41e000000 size 10485760 lkey 1871c rkey 1871c start_addr 0x41e000000
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO lock on dev 1
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO reg addr 0x7faa41308000 dev 1 size 528384 pd 0x7faa142481f0 flags 7
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO recv comm 0x7faa8038c000
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO dev 1 regAddr 7faa41308000 size 528384 lkey 21ed85 rkey 21ed85 start_addr 0x7faa41308000
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO send Control comm dev 0
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO channel id 4 sendcomm 0x7fc3ec2ee000 control at 0x7fc3ec113320 dev 0
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO lock on dev 0
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO reg addr 0x420000000 dev 0 size 10485760 pd 0x7faa14248190 flags 7
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO dev 0 regAddr 420000000 size 10485760 lkey 19866 rkey 19866 start_addr 0x420000000
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO lock on dev 1
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO reg addr 0x420a00000 dev 1 size 10485760 pd 0x7faa142481f0 flags 7
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO dev 1 regAddr 420a00000 size 10485760 lkey 1a01d rkey 1a01d start_addr 0x420a00000
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO lock on dev 0
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO reg addr 0x421400000 dev 0 size 10485760 pd 0x7faa14248190 flags 7
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO dev 0 regAddr 421400000 size 10485760 lkey 1a167 rkey 1a167 start_addr 0x421400000
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO lock on dev 1
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO reg addr 0x422000000 dev 1 size 10485760 pd 0x7faa142481f0 flags 7
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO dev 1 regAddr 422000000 size 10485760 lkey 1ab1e rkey 1ab1e start_addr 0x422000000
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO recv comm 0x7fa9f439d000
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO lock on dev 0
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO reg addr 0x7fc447308000 dev 0 size 528384 pd 0x7fc423eb3bd0 flags 7
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO dev 0 regAddr 7fc447308000 size 528384 lkey 176725 rkey 176725 start_addr 0x7fc447308000
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO lock on dev 0
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO reg addr 0x423400000 dev 0 size 10485760 pd 0x7faa14248190 flags 7
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO dev 0 regAddr 423400000 size 10485760 lkey 1b068 rkey 1b068 start_addr 0x423400000
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO lock on dev 1
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO reg addr 0x424000000 dev 1 size 10485760 pd 0x7faa142481f0 flags 7
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO dev 1 regAddr 424000000 size 10485760 lkey 1b41f rkey 1b41f start_addr 0x424000000
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO send Control comm dev 0
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO channel id 6 sendcomm 0x7faa80438000 control at 0x7faa8038be30 dev 0
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO lock on dev 0
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO reg addr 0x425400000 dev 0 size 524288 pd 0x7faa14248190 flags 7
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO dev 0 regAddr 425400000 size 524288 lkey 18ce7f rkey 18ce7f start_addr 0x425400000
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO lock on dev 0
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO reg addr 0x425600000 dev 0 size 10485760 pd 0x7faa14248190 flags 7
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO send Control comm dev 1
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO channel id 7 sendcomm 0x7fa9f4449000 control at 0x7fa9f43e6c20 dev 1
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO dev 0 regAddr 425600000 size 10485760 lkey 1be69 rkey 1be69 start_addr 0x425600000
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO lock on dev 1
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO reg addr 0x426000000 dev 1 size 10485760 pd 0x7faa142481f0 flags 7
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO dev 1 regAddr 426000000 size 10485760 lkey 1c120 rkey 1c120 start_addr 0x426000000
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO lock on dev 1
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO reg addr 0x427400000 dev 1 size 524288 pd 0x7faa142481f0 flags 7
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO dev 1 regAddr 427400000 size 524288 lkey 18de49 rkey 18de49 start_addr 0x427400000
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO lock on dev 0
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO reg addr 0x427600000 dev 0 size 10485760 pd 0x7faa14248190 flags 7
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO dev 0 regAddr 427600000 size 10485760 lkey 1d26a rkey 1d26a start_addr 0x427600000
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO lock on dev 1
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO reg addr 0x428000000 dev 1 size 10485760 pd 0x7faa142481f0 flags 7
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO dev 1 regAddr 428000000 size 10485760 lkey 1cf21 rkey 1cf21 start_addr 0x428000000
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO lock on dev 0
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO reg addr 0x41ea00000 dev 0 size 10485760 pd 0x7fc423eb3bd0 flags 7
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO dev 0 regAddr 41ea00000 size 10485760 lkey 14656 rkey 14656 start_addr 0x41ea00000
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO lock on dev 1
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO reg addr 0x41f400000 dev 1 size 10485760 pd 0x7fc423eb3c30 flags 7
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO dev 1 regAddr 41f400000 size 10485760 lkey 10e17 rkey 10e17 start_addr 0x41f400000
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO lock on dev 1
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO reg addr 0x7fc447508000 dev 1 size 528384 pd 0x7fc423eb3c30 flags 7
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO recv comm 0x7fc3ec39e000
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO dev 1 regAddr 7fc447508000 size 528384 lkey 177a39 rkey 177a39 start_addr 0x7fc447508000
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO lock on dev 0
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO reg addr 0x420a00000 dev 0 size 10485760 pd 0x7fc423eb3bd0 flags 7
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO dev 0 regAddr 420a00000 size 10485760 lkey 15557 rkey 15557 start_addr 0x420a00000
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO lock on dev 1
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO reg addr 0x421400000 dev 1 size 10485760 pd 0x7fc423eb3c30 flags 7
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO dev 1 regAddr 421400000 size 10485760 lkey 11a18 rkey 11a18 start_addr 0x421400000
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO recv comm 0x7fc3f438a000
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO lock on dev 0
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO reg addr 0x422000000 dev 0 size 10485760 pd 0x7fc423eb3bd0 flags 7
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO dev 0 regAddr 422000000 size 10485760 lkey 16458 rkey 16458 start_addr 0x422000000
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO lock on dev 1
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO reg addr 0x423400000 dev 1 size 10485760 pd 0x7fc423eb3c30 flags 7
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO dev 1 regAddr 423400000 size 10485760 lkey 12819 rkey 12819 start_addr 0x423400000
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO lock on dev 0
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO reg addr 0x424000000 dev 0 size 10485760 pd 0x7fc423eb3bd0 flags 7
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO dev 0 regAddr 424000000 size 10485760 lkey 18059 rkey 18059 start_addr 0x424000000
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO lock on dev 1
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO reg addr 0x424a00000 dev 1 size 10485760 pd 0x7fc423eb3c30 flags 7
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO dev 1 regAddr 424a00000 size 10485760 lkey 1381a rkey 1381a start_addr 0x424a00000
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO recv comm 0x7faa804e8000
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO send Control comm dev 1
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO channel id 7 sendcomm 0x7fc3f43c0000 control at 0x7fc3f4389ae0 dev 1
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO lock on dev 0
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO reg addr 0x429400000 dev 0 size 10485760 pd 0x7faa14248190 flags 7
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO recv comm 0x7fa9f44f9000
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO send Control comm dev 0
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO channel id 6 sendcomm 0x7fc3ec3d4000 control at 0x7fc3ec334d40 dev 0
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO dev 0 regAddr 429400000 size 10485760 lkey 1d66b rkey 1d66b start_addr 0x429400000
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO lock on dev 1
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO reg addr 0x42a000000 dev 1 size 10485760 pd 0x7faa142481f0 flags 7
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO dev 1 regAddr 42a000000 size 10485760 lkey 1d922 rkey 1d922 start_addr 0x42a000000
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO lock on dev 0
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO reg addr 0x42b400000 dev 0 size 10485760 pd 0x7faa14248190 flags 7
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO dev 0 regAddr 42b400000 size 10485760 lkey 1e56c rkey 1e56c start_addr 0x42b400000
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO lock on dev 1
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO reg addr 0x42c000000 dev 1 size 10485760 pd 0x7faa142481f0 flags 7
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO dev 1 regAddr 42c000000 size 10485760 lkey 1ef23 rkey 1ef23 start_addr 0x42c000000
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO lock on dev 1
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO reg addr 0x426a00000 dev 1 size 524288 pd 0x7fc423eb3c30 flags 7
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO dev 1 regAddr 426a00000 size 524288 lkey 183afa rkey 183afa start_addr 0x426a00000
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO lock on dev 0
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO reg addr 0x426e00000 dev 0 size 10485760 pd 0x7fc423eb3bd0 flags 7
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO dev 0 regAddr 426e00000 size 10485760 lkey 18d5a rkey 18d5a start_addr 0x426e00000
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO lock on dev 1
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO reg addr 0x428000000 dev 1 size 10485760 pd 0x7fc423eb3c30 flags 7
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO dev 1 regAddr 428000000 size 10485760 lkey 1411b rkey 1411b start_addr 0x428000000
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO lock on dev 0
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO reg addr 0x426c00000 dev 0 size 524288 pd 0x7fc423eb3bd0 flags 7
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO recv comm 0x7fc3f44e8000
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO dev 0 regAddr 426c00000 size 524288 lkey 1816d4 rkey 1816d4 start_addr 0x426c00000
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO lock on dev 0
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO reg addr 0x428a00000 dev 0 size 10485760 pd 0x7fc423eb3bd0 flags 7
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO dev 0 regAddr 428a00000 size 10485760 lkey 1995b rkey 1995b start_addr 0x428a00000
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO lock on dev 1
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO reg addr 0x42a000000 dev 1 size 10485760 pd 0x7fc423eb3c30 flags 7
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO dev 1 regAddr 42a000000 size 10485760 lkey 1521c rkey 1521c start_addr 0x42a000000
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO recv comm 0x7fc3ec4fc000
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO lock on dev 0
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO reg addr 0x42aa00000 dev 0 size 10485760 pd 0x7fc423eb3bd0 flags 7
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO dev 0 regAddr 42aa00000 size 10485760 lkey 1af5c rkey 1af5c start_addr 0x42aa00000
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO lock on dev 1
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO reg addr 0x42c000000 dev 1 size 10485760 pd 0x7fc423eb3c30 flags 7
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO dev 1 regAddr 42c000000 size 10485760 lkey 1651d rkey 1651d start_addr 0x42c000000
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO lock on dev 0
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO reg addr 0x42ca00000 dev 0 size 10485760 pd 0x7fc423eb3bd0 flags 7
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO dev 0 regAddr 42ca00000 size 10485760 lkey 1b65d rkey 1b65d start_addr 0x42ca00000
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO lock on dev 1
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO reg addr 0x42d400000 dev 1 size 10485760 pd 0x7fc423eb3c30 flags 7
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO dev 1 regAddr 42d400000 size 10485760 lkey 1701e rkey 1701e start_addr 0x42d400000
+e01-cn-yb84rbk1807:15085:15098 [1] NCCL INFO Connected all trees
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO Connected all trees
+e01-cn-v8n4s5sfd01:2123:2139 [1] NCCL INFO Connected all trees
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO Connected all trees
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO NCCL_PROTO set by environment to Simple
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO NCCL_ALGO set by environment to Ring
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO 4 coll channels, 0 nvls channels, 4 p2p channels, 2 p2p channels per peer
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO NCCL_PROTO set by environment to Simple
+e01-cn-v8n4s5sfd01:2123:2139 [1] NCCL INFO NCCL_PROTO set by environment to Simple
+e01-cn-yb84rbk1807:15085:15098 [1] NCCL INFO NCCL_PROTO set by environment to Simple
+e01-cn-yb84rbk1807:15085:15098 [1] NCCL INFO NCCL_ALGO set by environment to Ring
+e01-cn-yb84rbk1807:15085:15098 [1] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+e01-cn-yb84rbk1807:15085:15098 [1] NCCL INFO 4 coll channels, 0 nvls channels, 4 p2p channels, 2 p2p channels per peer
+e01-cn-v8n4s5sfd01:2123:2139 [1] NCCL INFO NCCL_ALGO set by environment to Ring
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO NCCL_ALGO set by environment to Ring
+e01-cn-v8n4s5sfd01:2123:2139 [1] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+e01-cn-v8n4s5sfd01:2123:2139 [1] NCCL INFO 4 coll channels, 0 nvls channels, 4 p2p channels, 2 p2p channels per peer
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO 4 coll channels, 0 nvls channels, 4 p2p channels, 2 p2p channels per peer
+e01-cn-v8n4s5sfd01:2123:2139 [1] NCCL INFO comm 0x561c8a9d4160 rank 1 nranks 4 cudaDev 1 nvmlDev 1 busId db000 commId 0x3b1369a9e8e0ca83 - Init COMPLETE
+e01-cn-v8n4s5sfd01:2123:2138 [0] NCCL INFO comm 0x561c8ab7e250 rank 0 nranks 4 cudaDev 0 nvmlDev 0 busId bb000 commId 0x3b1369a9e8e0ca83 - Init COMPLETE
+#
+#                                                              out-of-place                       in-place
+#       size         count      type   redop    root     time   algbw   busbw  #wrong     time   algbw   busbw  #wrong
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)             (us)  (GB/s)  (GB/s)        
+e01-cn-yb84rbk1807:15085:15098 [1] NCCL INFO comm 0x56357e4b4010 rank 3 nranks 4 cudaDev 1 nvmlDev 1 busId db000 commId 0x3b1369a9e8e0ca83 - Init COMPLETE
+e01-cn-yb84rbk1807:15085:15097 [0] NCCL INFO comm 0x56357e65e100 rank 2 nranks 4 cudaDev 0 nvmlDev 0 busId bb000 commId 0x3b1369a9e8e0ca83 - Init COMPLETE
+           8             2     float     sum      -1
+e01-cn-v8n4s5sfd01:2123:2144 [0] src/plugin.cc:1812 NCCL WARN NET/FuseLink : Got completion from peer 11.163.39.110<50796> with error 12, wr_id 0, dev 0, opcode 32682, len 32682, vendor err 129 (Recv)
+e01-cn-v8n4s5sfd01:2123:2144 [0] NCCL INFO transport/net.cc:1245 -> 6
+e01-cn-v8n4s5sfd01:2123:2144 [0] NCCL INFO proxy.cc:684 -> 6
+e01-cn-v8n4s5sfd01:2123:2144 [0] NCCL INFO proxy.cc:864 -> 6 [Progress Thread]
+
+e01-cn-v8n4s5sfd01:2123:2144 [0] src/plugin.cc:1812 NCCL WARN NET/FuseLink : Got completion from peer 11.163.39.110<50796> with error 5, wr_id 0, dev 0, opcode 0, len 22044, vendor err 249 (Recv)
+e01-cn-v8n4s5sfd01:2123:2144 [0] NCCL INFO transport/net.cc:1245 -> 6
+e01-cn-v8n4s5sfd01:2123:2144 [0] NCCL INFO proxy.cc:684 -> 6
+e01-cn-v8n4s5sfd01:2123:2144 [0] NCCL INFO proxy.cc:864 -> 6 [Progress Thread]
+e01-cn-v8n4s5sfd01:2123:2123 [1] NCCL INFO comm 0x561c8ab7e250 rank 0 nranks 4 cudaDev 0 busId bb000 - Abort COMPLETE
+
+e01-cn-yb84rbk1807:15085:15111 [0] src/plugin.cc:1812 NCCL WARN NET/FuseLink : Got completion from peer 11.163.39.114<35306> with error 12, wr_id 0, dev 0, opcode 32708, len 32708, vendor err 129 (Recv)
+e01-cn-yb84rbk1807:15085:15111 [0] NCCL INFO transport/net.cc:1245 -> 6
+e01-cn-yb84rbk1807:15085:15111 [0] NCCL INFO proxy.cc:684 -> 6
+e01-cn-yb84rbk1807:15085:15111 [0] NCCL INFO proxy.cc:864 -> 6 [Progress Thread]
+
+e01-cn-yb84rbk1807:15085:15111 [0] src/plugin.cc:1812 NCCL WARN NET/FuseLink : Got completion from peer 11.163.39.114<35306> with error 5, wr_id 0, dev 0, opcode 0, len 22069, vendor err 249 (Recv)
+e01-cn-yb84rbk1807:15085:15111 [0] NCCL INFO transport/net.cc:1245 -> 6
+e01-cn-yb84rbk1807:15085:15111 [0] NCCL INFO proxy.cc:684 -> 6
+e01-cn-yb84rbk1807:15085:15111 [0] NCCL INFO proxy.cc:864 -> 6 [Progress Thread]
+e01-cn-yb84rbk1807:15085:15085 [1] NCCL INFO comm 0x56357e65e100 rank 2 nranks 4 cudaDev 0 busId bb000 - Abort COMPLETE
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO [Service thread] Connection closed by localRank 0
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO [Service thread] Connection closed by localRank 0
+e01-cn-v8n4s5sfd01:2123:2143 [0] NCCL INFO [Service thread] Connection closed by localRank 1
+e01-cn-v8n4s5sfd01:2123:2142 [1] NCCL INFO [Service thread] Connection closed by localRank 1
+e01-cn-v8n4s5sfd01:2123:2123 [1] NCCL INFO comm 0x561c8a9d4160 rank 1 nranks 4 cudaDev 1 busId db000 - Abort COMPLETE
+e01-cn-v8n4s5sfd01: Test NCCL failure common.cu:528 'remote process exited or there was a network error / '
+ .. e01-cn-v8n4s5sfd01 pid 2123: Test failure common.cu:658
+ .. e01-cn-v8n4s5sfd01 pid 2123: Test failure common.cu:731
+ .. e01-cn-v8n4s5sfd01 pid 2123: Test failure common.cu:958
+ .. e01-cn-v8n4s5sfd01 pid 2123: Test failure all_reduce.cu:574
+ .. e01-cn-v8n4s5sfd01 pid 2123: Test failure common.cu:991
+ .. e01-cn-v8n4s5sfd01 pid 2123: Test failure common.cu:1870
+ .. e01-cn-v8n4s5sfd01 pid 2123: Test failure common.cu:1545
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO [Service thread] Connection closed by localRank 0
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO [Service thread] Connection closed by localRank 0
+e01-cn-yb84rbk1807:15085:15110 [0] NCCL INFO [Service thread] Connection closed by localRank 1
+e01-cn-yb84rbk1807:15085:15109 [1] NCCL INFO [Service thread] Connection closed by localRank 1
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[11339,1],0]
+  Exit code:    3
+--------------------------------------------------------------------------

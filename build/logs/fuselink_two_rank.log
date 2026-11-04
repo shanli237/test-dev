@@ -1,0 +1,1311 @@
+Selected GPUs: physical 7, GPU-31a509fd-e741-5ab8-b837-443ad986c404, 11 MiB, physical 6, GPU-6b44066c-6712-30f2-02d0-fa0cb91733a3, 95 MiB
+Node e01-cn-v8n4s5sfd01 GPUs=GPU-31a509fd-e741-5ab8-b837-443ad986c404,GPU-6b44066c-6712-30f2-02d0-fa0cb91733a3 NIC==mlx5_bond_7
+Selected GPUs: physical 0, GPU-80d8e94e-9b13-9017-cc9c-c34a27912baf, 0 MiB, physical 1, GPU-e25370b9-1b35-87fd-c564-06b84406363e, 0 MiB
+Node e01-cn-yb84rbk1807 GPUs=GPU-80d8e94e-9b13-9017-cc9c-c34a27912baf,GPU-e25370b9-1b35-87fd-c564-06b84406363e NIC==mlx5_bond_5
+# nccl-tests version 2.21.1 (afd59ab) nccl-headers=21904 nccl-library=21904
+# Collective test starting: all_reduce_perf
+# nThread 1 nGpus 1 minBytes 8 maxBytes 65536 step: 2(factor) warmup iters: 1 iters: 3 agg iters: 1 validation: 1 graph: 0 unalign: 0
+#
+# Using devices
+#  Rank  0 Group  0 Pid   2580 on e01-cn-v8n4s5sfd01 device  0 [0000:eb:00] NVIDIA L20D
+#  Rank  1 Group  0 Pid  17762 on e01-cn-yb84rbk1807 device  0 [0000:bb:00] NVIDIA L20D
+e01-cn-v8n4s5sfd01:2580:2580 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to =eth0
+e01-cn-v8n4s5sfd01:2580:2580 [0] NCCL INFO Bootstrap : Using eth0:11.163.39.114<0>
+e01-cn-v8n4s5sfd01:2580:2580 [0] NCCL INFO Plugin name set by env to libnccl-net-fuselink.so
+e01-cn-v8n4s5sfd01:2580:2580 [0] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v7 symbol.
+e01-cn-v8n4s5sfd01:2580:2580 [0] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin symbol (>= v5). ncclCollNetPlugin symbols v4 and lower are not supported.
+e01-cn-v8n4s5sfd01:2580:2580 [0] NCCL INFO cudaDriverVersion 13000
+NCCL version 2.19.4+cuda12.2
+e01-cn-yb84rbk1807:17762:17762 [0] NCCL INFO cudaDriverVersion 13000
+e01-cn-yb84rbk1807:17762:17762 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to =eth0
+e01-cn-yb84rbk1807:17762:17762 [0] NCCL INFO Bootstrap : Using eth0:11.163.39.110<0>
+e01-cn-yb84rbk1807:17762:17762 [0] NCCL INFO Plugin name set by env to libnccl-net-fuselink.so
+e01-cn-yb84rbk1807:17762:17762 [0] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v7 symbol.
+e01-cn-yb84rbk1807:17762:17762 [0] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin symbol (>= v5). ncclCollNetPlugin symbols v4 and lower are not supported.
+e01-cn-v8n4s5sfd01:2580:2609 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to =eth0
+e01-cn-v8n4s5sfd01:2580:2609 [0] NCCL INFO NCCL_IB_HCA set to =mlx5_bond_7
+e01-cn-v8n4s5sfd01:2580:2609 [0] NCCL INFO NET/FuseLink : Using [0]mlx5_bond_7:1/RoCE ; OOB eth0:11.163.39.114<0>
+
+e01-cn-v8n4s5sfd01:2580:2609 [0] src/plugin.cc:316 NCCL WARN 
+
+=======================
+NET/FuseLink: init done
+
+FuseLink is in very early stage of development, use in caution.
+=======================
+e01-cn-v8n4s5sfd01:2580:2609 [0] NCCL INFO NET/FuseLink : channel 0 nic 0
+e01-cn-v8n4s5sfd01:2580:2609 [0] NCCL INFO NET/FuseLink : channel 1 nic -1
+e01-cn-v8n4s5sfd01:2580:2609 [0] NCCL INFO NET/FuseLink : channel 2 nic -1
+e01-cn-v8n4s5sfd01:2580:2609 [0] NCCL INFO NET/FuseLink : channel 3 nic -1
+e01-cn-v8n4s5sfd01:2580:2609 [0] NCCL INFO NET/FuseLink : channel 4 nic -1
+e01-cn-v8n4s5sfd01:2580:2609 [0] NCCL INFO NET/FuseLink : channel 5 nic -1
+e01-cn-v8n4s5sfd01:2580:2609 [0] NCCL INFO NET/FuseLink : channel 6 nic -1
+e01-cn-v8n4s5sfd01:2580:2609 [0] NCCL INFO NET/FuseLink : channel 7 nic -1
+e01-cn-v8n4s5sfd01:2580:2609 [0] NCCL INFO NET/FuseLink : channel 8 nic -1
+e01-cn-v8n4s5sfd01:2580:2609 [0] NCCL INFO NET/FuseLink : channel 9 nic -1
+e01-cn-v8n4s5sfd01:2580:2609 [0] NCCL INFO NET/FuseLink : channel 10 nic -1
+e01-cn-v8n4s5sfd01:2580:2609 [0] NCCL INFO NET/FuseLink : channel 11 nic -1
+e01-cn-v8n4s5sfd01:2580:2609 [0] NCCL INFO NET/FuseLink : channel 12 nic -1
+e01-cn-v8n4s5sfd01:2580:2609 [0] NCCL INFO NET/FuseLink : channel 13 nic -1
+e01-cn-v8n4s5sfd01:2580:2609 [0] NCCL INFO NET/FuseLink : channel 14 nic -1
+e01-cn-v8n4s5sfd01:2580:2609 [0] NCCL INFO NET/FuseLink : channel 15 nic -1
+e01-cn-v8n4s5sfd01:2580:2609 [0] NCCL INFO Using non-device net plugin version 0
+e01-cn-v8n4s5sfd01:2580:2609 [0] NCCL INFO Using network FuseLink
+e01-cn-v8n4s5sfd01:2580:2609 [0] NCCL INFO NCCL_DMABUF_ENABLE set by environment to 0.
+e01-cn-yb84rbk1807:17762:17793 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to =eth0
+e01-cn-yb84rbk1807:17762:17793 [0] NCCL INFO NCCL_IB_HCA set to =mlx5_bond_5
+e01-cn-yb84rbk1807:17762:17793 [0] NCCL INFO NET/FuseLink : Using [0]mlx5_bond_5:1/RoCE ; OOB eth0:11.163.39.110<0>
+
+e01-cn-yb84rbk1807:17762:17793 [0] src/plugin.cc:316 NCCL WARN 
+
+=======================
+NET/FuseLink: init done
+
+FuseLink is in very early stage of development, use in caution.
+=======================
+e01-cn-yb84rbk1807:17762:17793 [0] NCCL INFO NET/FuseLink : channel 0 nic 0
+e01-cn-yb84rbk1807:17762:17793 [0] NCCL INFO NET/FuseLink : channel 1 nic -1
+e01-cn-yb84rbk1807:17762:17793 [0] NCCL INFO NET/FuseLink : channel 2 nic -1
+e01-cn-yb84rbk1807:17762:17793 [0] NCCL INFO NET/FuseLink : channel 3 nic -1
+e01-cn-yb84rbk1807:17762:17793 [0] NCCL INFO NET/FuseLink : channel 4 nic -1
+e01-cn-yb84rbk1807:17762:17793 [0] NCCL INFO NET/FuseLink : channel 5 nic -1
+e01-cn-yb84rbk1807:17762:17793 [0] NCCL INFO NET/FuseLink : channel 6 nic -1
+e01-cn-yb84rbk1807:17762:17793 [0] NCCL INFO NET/FuseLink : channel 7 nic -1
+e01-cn-yb84rbk1807:17762:17793 [0] NCCL INFO NET/FuseLink : channel 8 nic -1
+e01-cn-yb84rbk1807:17762:17793 [0] NCCL INFO NET/FuseLink : channel 9 nic -1
+e01-cn-yb84rbk1807:17762:17793 [0] NCCL INFO NET/FuseLink : channel 10 nic -1
+e01-cn-yb84rbk1807:17762:17793 [0] NCCL INFO NET/FuseLink : channel 11 nic -1
+e01-cn-yb84rbk1807:17762:17793 [0] NCCL INFO NET/FuseLink : channel 12 nic -1
+e01-cn-yb84rbk1807:17762:17793 [0] NCCL INFO NET/FuseLink : channel 13 nic -1
+e01-cn-yb84rbk1807:17762:17793 [0] NCCL INFO NET/FuseLink : channel 14 nic -1
+e01-cn-yb84rbk1807:17762:17793 [0] NCCL INFO NET/FuseLink : channel 15 nic -1
+e01-cn-yb84rbk1807:17762:17793 [0] NCCL INFO Using non-device net plugin version 0
+e01-cn-yb84rbk1807:17762:17793 [0] NCCL INFO Using network FuseLink
+e01-cn-yb84rbk1807:17762:17793 [0] NCCL INFO NCCL_DMABUF_ENABLE set by environment to 0.
+e01-cn-yb84rbk1807:17762:17793 [0] NCCL INFO comm 0x55d6287c65d0 rank 1 nranks 2 cudaDev 0 nvmlDev 0 busId bb000 commId 0x15754ad63bf712f3 - Init START
+e01-cn-v8n4s5sfd01:2580:2609 [0] NCCL INFO comm 0x55f28ee47bd0 rank 0 nranks 2 cudaDev 0 nvmlDev 7 busId eb000 commId 0x15754ad63bf712f3 - Init START
+e01-cn-yb84rbk1807:17762:17793 [0] NCCL INFO NCCL_NET_GDR_LEVEL set by environment to SYS
+e01-cn-yb84rbk1807:17762:17793 [0] NCCL INFO Setting affinity for GPU 0 to ffffffff,ffffffff,00000000,00000000,ffffffff,ffffffff,00000000,00000000
+e01-cn-v8n4s5sfd01:2580:2609 [0] NCCL INFO NCCL_NET_GDR_LEVEL set by environment to SYS
+e01-cn-v8n4s5sfd01:2580:2609 [0] NCCL INFO Setting affinity for GPU 7 to ffffffff,ffffffff,00000000,00000000,ffffffff,ffffffff,00000000,00000000
+e01-cn-v8n4s5sfd01:2580:2609 [0] NCCL INFO NCCL_MAX_NCHANNELS set by environment to 1.
+e01-cn-v8n4s5sfd01:2580:2609 [0] NCCL INFO NCCL_MIN_NCHANNELS set by environment to 1.
+e01-cn-v8n4s5sfd01:2580:2609 [0] NCCL INFO Channel 00/01 :    0   1
+e01-cn-v8n4s5sfd01:2580:2609 [0] NCCL INFO Trees [0] 1/-1/-1->0->-1
+e01-cn-v8n4s5sfd01:2580:2609 [0] NCCL INFO P2P Chunksize set to 131072
+e01-cn-v8n4s5sfd01:2580:2609 [0] NCCL INFO NCCL_CUMEM_ENABLE set by environment to 1.
+e01-cn-yb84rbk1807:17762:17793 [0] NCCL INFO NCCL_MAX_NCHANNELS set by environment to 1.
+e01-cn-yb84rbk1807:17762:17793 [0] NCCL INFO NCCL_MIN_NCHANNELS set by environment to 1.
+e01-cn-yb84rbk1807:17762:17793 [0] NCCL INFO Trees [0] -1/-1/-1->1->0
+e01-cn-yb84rbk1807:17762:17793 [0] NCCL INFO P2P Chunksize set to 131072
+e01-cn-yb84rbk1807:17762:17793 [0] NCCL INFO NCCL_CUMEM_ENABLE set by environment to 1.
+e01-cn-v8n4s5sfd01:2580:2612 [0] NCCL INFO NCCL_FUSELINK_NCHANNELS set by environment to 1.
+e01-cn-v8n4s5sfd01:2580:2612 [0] NCCL INFO channel id 0 listen comm 0x7f38a0009f40 dev 0
+e01-cn-v8n4s5sfd01:2580:2609 [0] NCCL INFO Channel 00/0 : 1[0] -> 0[7] [receive] via NET/FuseLink/0/GDRDMA
+e01-cn-v8n4s5sfd01:2580:2609 [0] NCCL INFO Channel 00/0 : 0[7] -> 1[0] [send] via NET/FuseLink/0/GDRDMA
+e01-cn-yb84rbk1807:17762:17795 [0] NCCL INFO NCCL_FUSELINK_NCHANNELS set by environment to 1.
+e01-cn-yb84rbk1807:17762:17795 [0] NCCL INFO channel id 0 listen comm 0x7f5fb4009ef0 dev 0
+e01-cn-yb84rbk1807:17762:17793 [0] NCCL INFO Channel 00/0 : 0[7] -> 1[0] [receive] via NET/FuseLink/0/GDRDMA
+e01-cn-yb84rbk1807:17762:17793 [0] NCCL INFO Channel 00/0 : 1[0] -> 0[7] [send] via NET/FuseLink/0/GDRDMA
+e01-cn-v8n4s5sfd01:2580:2612 [0] NCCL INFO NET/FuseLink : set up send channel 0 nicdev 0
+e01-cn-v8n4s5sfd01:2580:2612 [0] NCCL INFO init send comm, dev 0
+e01-cn-yb84rbk1807:17762:17795 [0] NCCL INFO NET/FuseLink : set up send channel 0 nicdev 0
+e01-cn-yb84rbk1807:17762:17795 [0] NCCL INFO init send comm, dev 0
+e01-cn-yb84rbk1807:17762:17795 [0] NCCL INFO NCCL_IB_GID_INDEX set by environment to 3.
+e01-cn-v8n4s5sfd01:2580:2612 [0] NCCL INFO NCCL_IB_GID_INDEX set by environment to 3.
+e01-cn-v8n4s5sfd01:2580:2612 [0] NCCL INFO NET/FuseLink : set up recv channel 0 nicdev 0
+e01-cn-v8n4s5sfd01:2580:2612 [0] NCCL INFO init recv comm, dev 0
+e01-cn-yb84rbk1807:17762:17795 [0] NCCL INFO NET/FuseLink : set up recv channel 0 nicdev 0
+e01-cn-yb84rbk1807:17762:17795 [0] NCCL INFO init recv comm, dev 0
+e01-cn-v8n4s5sfd01:2580:2612 [0] NCCL INFO recv Control comm dev 0
+e01-cn-yb84rbk1807:17762:17795 [0] NCCL INFO recv Control comm dev 0
+e01-cn-yb84rbk1807:17762:17795 [0] NCCL INFO send Control comm dev 0
+e01-cn-yb84rbk1807:17762:17795 [0] NCCL INFO channel id 0 sendcomm 0x7f5fb4019000 control at 0x7f5fb40184c0 dev 0
+e01-cn-v8n4s5sfd01:2580:2612 [0] NCCL INFO send Control comm dev 0
+e01-cn-v8n4s5sfd01:2580:2612 [0] NCCL INFO channel id 0 sendcomm 0x7f38a0019000 control at 0x7f38a0018510 dev 0
+e01-cn-v8n4s5sfd01:2580:2612 [0] NCCL INFO lock on dev 0
+e01-cn-v8n4s5sfd01:2580:2612 [0] NCCL INFO reg addr 0x7f3893200000 dev 0 size 528384 pd 0x7f386428f940 flags 7
+e01-cn-v8n4s5sfd01:2580:2612 [0] NCCL INFO dev 0 regAddr 7f3893200000 size 528384 lkey 21edfa rkey 21edfa start_addr 0x7f3893200000
+e01-cn-v8n4s5sfd01:2580:2612 [0] NCCL INFO lock on dev 0
+e01-cn-v8n4s5sfd01:2580:2612 [0] NCCL INFO reg addr 0x7f384f200000 dev 0 size 10485760 pd 0x7f386428f940 flags 7
+e01-cn-v8n4s5sfd01:2580:2612 [0] NCCL INFO dev 0 regAddr 7f384f200000 size 10485760 lkey 10379 rkey 10379 start_addr 0x7f384f200000
+e01-cn-v8n4s5sfd01:2580:2612 [0] NCCL INFO recv comm 0x7f38a0098000
+e01-cn-yb84rbk1807:17762:17795 [0] NCCL INFO lock on dev 0
+e01-cn-yb84rbk1807:17762:17795 [0] NCCL INFO reg addr 0x7f5fff200000 dev 0 size 528384 pd 0x7f5fdbe264f0 flags 7
+e01-cn-yb84rbk1807:17762:17795 [0] NCCL INFO dev 0 regAddr 7f5fff200000 size 528384 lkey 618828 rkey 618828 start_addr 0x7f5fff200000
+e01-cn-v8n4s5sfd01:2580:2612 [0] NCCL INFO lock on dev 0
+e01-cn-v8n4s5sfd01:2580:2612 [0] NCCL INFO reg addr 0x402a00000 dev 0 size 10485760 pd 0x7f386428f940 flags 7
+e01-cn-v8n4s5sfd01:2580:2612 [0] NCCL INFO dev 0 regAddr 402a00000 size 10485760 lkey 10f7a rkey 10f7a start_addr 0x402a00000
+e01-cn-yb84rbk1807:17762:17795 [0] NCCL INFO lock on dev 0
+e01-cn-yb84rbk1807:17762:17795 [0] NCCL INFO reg addr 0x7f5fbb200000 dev 0 size 10485760 pd 0x7f5fdbe264f0 flags 7
+e01-cn-yb84rbk1807:17762:17795 [0] NCCL INFO dev 0 regAddr 7f5fbb200000 size 10485760 lkey b9b5 rkey b9b5 start_addr 0x7f5fbb200000
+e01-cn-yb84rbk1807:17762:17795 [0] NCCL INFO recv comm 0x7f5fb4098000
+e01-cn-yb84rbk1807:17762:17795 [0] NCCL INFO lock on dev 0
+e01-cn-yb84rbk1807:17762:17795 [0] NCCL INFO reg addr 0x402a00000 dev 0 size 10485760 pd 0x7f5fdbe264f0 flags 7
+e01-cn-yb84rbk1807:17762:17795 [0] NCCL INFO dev 0 regAddr 402a00000 size 10485760 lkey c2b6 rkey c2b6 start_addr 0x402a00000
+e01-cn-yb84rbk1807:17762:17793 [0] NCCL INFO Connected all rings
+e01-cn-yb84rbk1807:17762:17793 [0] NCCL INFO Connected all trees
+e01-cn-yb84rbk1807:17762:17793 [0] NCCL INFO NCCL_PROTO set by environment to Simple
+e01-cn-yb84rbk1807:17762:17793 [0] NCCL INFO NCCL_ALGO set by environment to Ring
+e01-cn-yb84rbk1807:17762:17793 [0] NCCL INFO threadThresholds 8/8/64 | 16/8/64 | 512 | 512
+e01-cn-yb84rbk1807:17762:17793 [0] NCCL INFO 1 coll channels, 0 nvls channels, 1 p2p channels, 1 p2p channels per peer
+e01-cn-v8n4s5sfd01:2580:2609 [0] NCCL INFO Connected all rings
+e01-cn-v8n4s5sfd01:2580:2609 [0] NCCL INFO Connected all trees
+e01-cn-v8n4s5sfd01:2580:2609 [0] NCCL INFO NCCL_PROTO set by environment to Simple
+e01-cn-v8n4s5sfd01:2580:2609 [0] NCCL INFO NCCL_ALGO set by environment to Ring
+e01-cn-v8n4s5sfd01:2580:2609 [0] NCCL INFO threadThresholds 8/8/64 | 16/8/64 | 512 | 512
+e01-cn-v8n4s5sfd01:2580:2609 [0] NCCL INFO 1 coll channels, 0 nvls channels, 1 p2p channels, 1 p2p channels per peer
+e01-cn-yb84rbk1807:17762:17793 [0] NCCL INFO comm 0x55d6287c65d0 rank 1 nranks 2 cudaDev 0 nvmlDev 0 busId bb000 commId 0x15754ad63bf712f3 - Init COMPLETE
+e01-cn-v8n4s5sfd01:2580:2609 [0] NCCL INFO comm 0x55f28ee47bd0 rank 0 nranks 2 cudaDev 0 nvmlDev 7 busId eb000 commId 0x15754ad63bf712f3 - Init COMPLETE
+#
+#                                                              out-of-place                       in-place
+#       size         count      type   redop    root     time   algbw   busbw  #wrong     time   algbw   busbw  #wrong
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)             (us)  (GB/s)  (GB/s)        
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 1
+           8             2     float     sum      -1e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 1
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+    59.78    0.00    0.00       0e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+    55.68    0.00    0.00       0
+          16             4     float     sum      -1e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+    55.16    0.00    0.00       0e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+    55.55    0.00    0.00       0
+          32             8     float     sum      -1e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+    54.62    0.00    0.00       0e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+    51.23    0.00    0.00       0
+          64            16     float     sum      -1e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+    55.80    0.00    0.00       0e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+    50.82    0.00    0.00       0
+         128            32     float     sum      -1e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+    53.06    0.00    0.00       0e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+    55.03    0.00    0.00       0
+         256            64     float     sum      -1e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+    52.43    0.00    0.00       0e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+    54.02    0.00    0.00       0
+         512           128     float     sum      -1e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 1
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 1
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+    54.11    0.01    0.01       0e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+    53.45    0.01    0.01       0
+        1024           256     float     sum      -1e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+    57.35    0.02    0.02       0e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+    57.14    0.02    0.02       0
+        2048           512     float     sum      -1e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+    55.32    0.04    0.04       0e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+    56.23    0.04    0.04       0
+        4096          1024     float     sum      -1e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+    65.95    0.06    0.06       0e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+    56.38    0.07    0.07       0
+        8192          2048     float     sum      -1e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+    55.44    0.15    0.15       0e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+    54.96    0.15    0.15       0
+       16384          4096     float     sum      -1e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+    70.87    0.23    0.23       0e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+    69.82    0.23    0.23       0
+       32768          8192     float     sum      -1e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+    57.88    0.57    0.57       0e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 1
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 1
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+    58.19    0.56    0.56       0
+       65536         16384     float     sum      -1e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+    59.93    1.09    1.09       0e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-v8n4s5sfd01:2580:2613 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+e01-cn-yb84rbk1807:17762:17796 [0] NCCL INFO req->type 2 req->events 0
+    59.15    1.11    1.11       0
+e01-cn-yb84rbk1807:17762:17762 [0] NCCL INFO comm 0x55d6287c65d0 rank 1 nranks 2 cudaDev 0 busId bb000 - Destroy COMPLETE
+e01-cn-v8n4s5sfd01:2580:2580 [0] NCCL INFO comm 0x55f28ee47bd0 rank 0 nranks 2 cudaDev 0 busId eb000 - Destroy COMPLETE
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 0.156261 
+#
+# Collective test concluded: all_reduce_perf
+#
+

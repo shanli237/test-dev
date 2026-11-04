@@ -1,5 +1,3 @@
 upload.sh
 
 # Local build outputs and runtime logs (already tracked files remain tracked).
-/build/
-*.o
